@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Избранные автомобили | ABC Auto | ABC Auto Москва</title>
+    <meta name="description" content="Избранные автомобили | ABC Auto в официальном автосалоне ABC Auto. Выгодные кредиты от 1.9%, Trade-In с выгодой до 300 000 руб., гарантия и подарки при покупке.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#CA0100',
+                            redHover: '#A30000',
+                            redLight: '#FEE2E2',
+                            dark: '#0F172A',
+                            slate: '#1E293B',
+                            amber: '#F59E0B',
+                            green: '#16A34A',
+                            border: '#E2E8F0',
+                            bg: '#F8FAFC'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'card': '0 4px 20px -2px rgba(15, 23, 42, 0.06)',
+                        'card-hover': '0 20px 30px -10px rgba(15, 23, 42, 0.12)',
+                        'glow-red': '0 4px 20px rgba(202, 1, 0, 0.35)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-brand-bg text-slate-800 antialiased selection:bg-brand-red selection:text-white">
+    
+    <!-- ======================================================================
+         TOP BAR: City, Working Hours, Address, Quick Contact
+         ====================================================================== -->
+    <div class="bg-slate-900 text-slate-300 text-xs border-b border-slate-800 py-2.5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-2">
+            <div class="flex flex-wrap items-center gap-4 sm:gap-6 justify-center md:justify-start">
+                <button id="citySelector" class="flex items-center gap-1.5 hover:text-white transition">
+                    <i class="fa-solid fa-location-dot text-brand-red"></i>
+                    <span class="font-medium text-white border-b border-dashed border-slate-400">Москва</span>
+                    <i class="fa-solid fa-chevron-down text-[10px] text-slate-400"></i>
+                </button>
+                <div class="hidden sm:flex items-center gap-2 text-slate-400">
+                    <i class="fa-regular fa-clock text-slate-400"></i>
+                    <span>Ежедневно с 08:00 до 21:00</span>
+                </div>
+                <div class="hidden lg:flex items-center gap-2 text-slate-400">
+                    <i class="fa-solid fa-map-pin text-slate-400"></i>
+                    <span>38-й км МКАД, 6Бс1</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4 sm:gap-6">
+                <div class="flex items-center gap-3">
+                    <a href="https://wa.me/78005519431" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition flex items-center gap-1">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <span class="hidden md:inline">WhatsApp</span>
+                    </a>
+                    <a href="https://t.me/abcauto" target="_blank" class="text-sky-400 hover:text-sky-300 transition flex items-center gap-1">
+                        <i class="fa-brands fa-telegram text-sm"></i>
+                        <span class="hidden md:inline">Telegram</span>
+                    </a>
+                </div>
+                <div class="h-3 w-px bg-slate-700 hidden sm:block"></div>
+                <div class="flex items-center gap-3">
+                    <a href="tel:+78005519431" class="font-bold text-white text-sm hover:text-brand-red transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone text-brand-red text-xs"></i>
+                        +7 (800) 551-94-31
+                    </a>
+                    <button class="btn-open-callback text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1 rounded-md border border-slate-700 transition">
+                        Обратный звонок
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         MAIN HEADER: Logo, Navigation, Search, Favorites, Dropdowns
+         ====================================================================== -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-red to-red-500 flex items-center justify-center text-white shadow-md shadow-red-500/20 group-hover:scale-105 transition">
+                        <i class="fa-solid fa-car-side text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1.5 font-heading font-black text-2xl tracking-tight text-slate-900 leading-none">
+                            ABC <span class="text-brand-red">AUTO</span>
+                            <span class="text-xs bg-red-100 text-brand-red font-bold px-1.5 py-0.5 rounded uppercase">+</span>
+                        </div>
+                        <div class="text-[11px] text-slate-500 tracking-wider uppercase font-semibold mt-0.5">Мультибрендовый салон</div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links with Dropdowns -->
+                <nav class="hidden xl:flex items-center gap-6 text-[14px] font-medium text-slate-700">
+                    <a href="car-selection.html" class="hover:text-brand-red transition ">Подбор авто</a>
+                    
+                    <!-- Dropdown: Каталог авто -->
+                    <div class="relative group">
+                        <a href="catalog.html" class="flex items-center gap-1 hover:text-brand-red transition py-6 ">
+                            <span>Каталог авто</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition"></i>
+                        </a>
+                        <div class="absolute top-full left-0 w-64 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="catalog.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Все новые автомобили</a>
+                            <a href="brand.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Модельный ряд KIA</a>
+                            <a href="model.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Kia Rio IV Рестайлинг</a>
+                            <a href="equipment.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Сравнение комплектаций</a>
+                            <a href="model-credit.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Модель в кредит со скидкой</a>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown: Авто с пробегом -->
+                    <div class="relative group">
+                        <a href="used-cars.html" class="flex items-center gap-1 hover:text-brand-red transition py-6 ">
+                            <span>С пробегом</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition"></i>
+                        </a>
+                        <div class="absolute top-full left-0 w-60 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="used-cars.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Каталог авто с пробегом</a>
+                            <a href="used-car-detail.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Карточка авто с диагностикой</a>
+                            <a href="car-selection-used.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Мастер подбора с пробегом</a>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown: Кредит и рассрочка -->
+                    <div class="relative group">
+                        <a href="credit.html" class="flex items-center gap-1 hover:text-brand-red transition py-6 ">
+                            <span>Кредит и рассрочка</span>
+                            <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-1.5 py-0.5 rounded">1.9%</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition"></i>
+                        </a>
+                        <div class="absolute top-full left-0 w-64 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="credit.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Кредитный калькулятор</a>
+                            <a href="express-credit.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Экспресс-кредит за 15 мин</a>
+                            <a href="installment.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Рассрочка 0% без переплат</a>
+                            <a href="family-car.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Семейный автомобиль (-10%)</a>
+                            <a href="first-car.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Первый автомобиль (-10%)</a>
+                            <a href="medical-worker.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Работникам медицины</a>
+                            <a href="recycling.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Программа Утилизация</a>
+                            <a href="trade-in.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Обмен по Trade-In</a>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown: Спецпредложения & Услуги -->
+                    <div class="relative group">
+                        <a href="selections.html" class="flex items-center gap-1 hover:text-brand-red transition py-6 ">
+                            <span>Спецпредложения</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition"></i>
+                        </a>
+                        <div class="absolute top-full left-0 w-64 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="selections.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Все наши подборки</a>
+                            <a href="selection-detail.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Семейные автомобили</a>
+                            <a href="taxi.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Такси в кредит под ключ</a>
+                            <a href="taxi-car.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Автомобиль для такси</a>
+                            <a href="insurance.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Страхование КАСКО / ОСАГО</a>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown: О компании -->
+                    <div class="relative group">
+                        <a href="about.html" class="flex items-center gap-1 hover:text-brand-red transition py-6 ">
+                            <span>О салоне</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition"></i>
+                        </a>
+                        <div class="absolute top-full right-0 w-56 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="about.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">О компании ABC Auto</a>
+                            <a href="service.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Сервисный техцентр</a>
+                            <a href="reviews.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Отзывы покупателей</a>
+                            <a href="review-detail.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Открытый отзыв клиента</a>
+                            <a href="blog.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Блог и новости</a>
+                            <a href="article.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Полезная статья</a>
+                            <a href="contacts.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Контакты и адрес</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="flex items-center gap-3">
+                    <a href="compare.html" class="relative p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:text-brand-red hover:border-red-200 hover:bg-red-50 transition" title="Сравнение авто">
+                        <i class="fa-solid fa-code-compare text-base"></i>
+                        <span id="compareCount" class="absolute -top-1.5 -right-1.5 bg-slate-900 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">10</span>
+                    </a>
+
+                    <a href="favorites.html" class="relative p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:text-brand-red hover:border-red-200 hover:bg-red-50 transition" title="Избранные авто">
+                        <i class="fa-regular fa-heart text-base"></i>
+                        <span id="favCount" class="absolute -top-1.5 -right-1.5 bg-brand-red text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">12</span>
+                    </a>
+
+                    <button class="btn-open-callback hidden md:flex items-center gap-2 bg-brand-red hover:bg-brand-redHover text-white px-5 py-2.5 rounded-xl font-semibold text-sm shadow-glow-red hover:shadow-lg transition">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <span>Забронировать авто</span>
+                    </button>
+
+                    <button id="mobileMenuBtn" class="xl:hidden p-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 transition" aria-label="Открыть меню">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenuBackdrop" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+    <div id="mobileMenuDrawer" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white z-50 shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+        <div>
+            <div class="flex items-center justify-between pb-5 border-b border-slate-200">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-brand-red text-white flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    <span class="font-heading font-black text-xl text-slate-900">ABC AUTO</span>
+                </a>
+                <button id="mobileMenuClose" class="w-9 h-9 rounded-lg bg-slate-100 text-slate-600 flex items-center justify-center hover:bg-slate-200 transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <nav class="mt-6 flex flex-col space-y-1.5 text-sm font-semibold text-slate-800">
+                <a href="index.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Главная</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="car-selection.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Подбор авто</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="catalog.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Каталог новых авто</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="brand.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Модельный ряд KIA</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="model.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Модель Kia Rio</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="used-cars.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Авто с пробегом</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="credit.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Кредит и рассрочка</span> <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">1.9%</span>
+                </a>
+                <a href="trade-in.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Обмен Trade-In</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="taxi.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Такси в кредит</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="selections.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Наши подборки</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="reviews.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Отзывы клиентов</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="about.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>О компании</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="service.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Техцентр</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="blog.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Блог</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="contacts.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Контакты</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+            </nav>
+        </div>
+
+        <div class="pt-6 border-t border-slate-200 mt-6">
+            <a href="tel:+78005519431" class="font-heading font-black text-xl text-slate-900 block mb-1 hover:text-brand-red transition">
+                +7 (800) 551-94-31
+            </a>
+            <div class="text-xs text-slate-500 mb-4">Ежедневно 08:00 - 21:00 (Бесплатно по РФ)</div>
+            <button class="btn-open-callback w-full bg-brand-red text-white py-3 rounded-xl font-bold text-sm shadow-md hover:bg-brand-redHover transition">
+                Заказать обратный звонок
+            </button>
+        </div>
+    </div>
+    
+
+    <!-- Breadcrumbs -->
+    <div class="bg-white border-b border-slate-200/80 py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-slate-500 flex items-center gap-2">
+            <a href="index.html" class="hover:text-brand-red transition"><i class="fa-solid fa-house text-slate-400"></i></a>
+            <span>/</span>
+            <span class="text-slate-800 font-medium">Избранное</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        
+    <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div class="flex items-center justify-between">
+            <h1 class="font-heading font-black text-3xl sm:text-4xl text-slate-900">Избранное: Новые автомобили (12 авто)</h1>
+            <div class="flex gap-2">
+                <a href="favorites-used.html" class="text-xs font-semibold px-3 py-1.5 bg-slate-100 rounded-xl hover:bg-slate-200">С пробегом (3)</a>
+                <a href="favorites-taxi.html" class="text-xs font-semibold px-3 py-1.5 bg-slate-100 rounded-xl hover:bg-slate-200">Такси (2)</a>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-5 rounded-3xl shadow-card border border-slate-200">
+                <img src="images/kia_rio.webp" alt="Kia Rio" class="h-40 mx-auto object-contain mb-3">
+                <div class="font-heading font-bold text-base">Kia Rio IV Luxe</div>
+                <div class="text-xs text-brand-red font-bold">1 120 000 ₽</div>
+                <div class="mt-3 flex gap-2">
+                    <a href="model.html" class="flex-1 bg-brand-red text-white py-2 rounded-xl text-center text-xs font-bold">Купить</a>
+                    <button class="px-3 bg-slate-100 text-slate-500 rounded-xl text-xs hover:text-red-500"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    </main>
+
+    
+    <!-- ======================================================================
+         RICH FOOTER: SEO Matrix, Brands Directory, Program Links
+         ====================================================================== -->
+    <footer class="bg-slate-950 text-slate-400 text-xs pt-16 pb-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div>
+                <div class="text-slate-300 font-heading font-black text-sm uppercase tracking-wider mb-4">
+                    Каталог популярных моделей в наличии
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 text-[11px]">
+                    <div>
+                        <div class="font-bold text-white mb-1.5"><a href="brand.html" class="hover:text-brand-red">KIA</a></div>
+                        <ul class="space-y-1 text-slate-400">
+                            <li><a href="model.html" class="hover:text-brand-red transition">Kia Rio</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Kia Sportage</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Kia Sorento</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Kia K5</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white mb-1.5">Hyundai</div>
+                        <ul class="space-y-1 text-slate-400">
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Hyundai Solaris</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Hyundai Creta</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Hyundai Tucson</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Hyundai Santa Fe</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white mb-1.5">Chery</div>
+                        <ul class="space-y-1 text-slate-400">
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Tiggo 4 Pro</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Tiggo 7 Pro Max</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Tiggo 8 Pro Max</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Arrizo 8</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white mb-1.5">Geely</div>
+                        <ul class="space-y-1 text-slate-400">
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Geely Coolray</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Geely Atlas Pro</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Geely Monjaro</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Geely Emgrand</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white mb-1.5">Haval</div>
+                        <ul class="space-y-1 text-slate-400">
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Haval Jolion</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Haval F7 / F7x</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Haval Dargo</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Haval H9</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white mb-1.5">Changan & JAC</div>
+                        <ul class="space-y-1 text-slate-400">
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Changan CS35 Plus</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Changan CS55 Plus</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">JAC J7 Liftback</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">JAC JS6</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pt-8 border-t border-slate-900">
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <div class="w-9 h-9 rounded-xl bg-brand-red text-white flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <span class="font-heading font-black text-xl text-white">ABC AUTO +</span>
+                    </a>
+                    <p class="text-[11px] leading-relaxed text-slate-400">
+                        Официальный мультибрендовый автосалон в Москве. Продажа новых автомобилей и авто с пробегом с гарантией юридической чистоты.
+                    </p>
+                    <div class="text-[11px] text-slate-400">
+                        ОГРН: 1127746592810 • ИНН: 7724849201
+                    </div>
+                </div>
+
+                <div>
+                    <div class="font-heading font-bold text-white text-xs uppercase mb-3">Навигация</div>
+                    <ul class="space-y-2 text-[11px]">
+                        <li><a href="car-selection.html" class="hover:text-white transition">Подбор автомобиля</a></li>
+                        <li><a href="catalog.html" class="hover:text-white transition">Автомобили с ПТС в наличии</a></li>
+                        <li><a href="used-cars.html" class="hover:text-white transition">Каталог авто с пробегом</a></li>
+                        <li><a href="selections.html" class="hover:text-white transition">Действующие спецпредложения</a></li>
+                        <li><a href="credit.html" class="hover:text-white transition">Кредитный калькулятор онлайн</a></li>
+                        <li><a href="reviews.html" class="hover:text-white transition">Отзывы покупателей</a></li>
+                        <li><a href="contacts.html" class="hover:text-white transition">Контакты и адрес</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="font-heading font-bold text-white text-xs uppercase mb-3">Программы</div>
+                    <ul class="space-y-2 text-[11px]">
+                        <li><a href="family-car.html" class="hover:text-white transition">Госпрограмма "Семейный автомобиль"</a></li>
+                        <li><a href="first-car.html" class="hover:text-white transition">Госпрограмма "Первый автомобиль"</a></li>
+                        <li><a href="trade-in.html" class="hover:text-white transition">Обмен по Trade-in (+300 000 ₽)</a></li>
+                        <li><a href="installment.html" class="hover:text-white transition">Рассрочка 0% без переплат</a></li>
+                        <li><a href="taxi.html" class="hover:text-white transition">Автомобили для такси в кредит</a></li>
+                        <li><a href="medical-worker.html" class="hover:text-white transition">Работникам медицины</a></li>
+                        <li><a href="recycling.html" class="hover:text-white transition">Программа утилизации</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="font-heading font-bold text-white text-xs uppercase mb-3">Контакты</div>
+                    <div class="font-heading font-black text-lg text-white">+7 (800) 551-94-31</div>
+                    <div class="text-[11px] text-slate-400">Россия, Москва, 38-й км МКАД, 6Бс1</div>
+                    <div class="text-[11px] text-slate-400">Режим работы: 08:00 - 21:00 (ежедневно)</div>
+                    <button class="btn-open-callback w-full bg-slate-800 hover:bg-slate-700 text-white py-2.5 rounded-xl font-bold text-xs border border-slate-700 transition">
+                        Заказать обратный звонок
+                    </button>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+                <div>
+                    &copy; 2024–2026 ABC Auto. Все права защищены. Информация на сайте не является публичной офертой.
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="404.html" class="hover:text-slate-400 transition">Тест 404 ошибки</a>
+                    <a href="#" class="hover:text-slate-400 transition">Политика конфиденциальности</a>
+                    <a href="#" class="hover:text-slate-400 transition">Пользовательское соглашение</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="bookingModal" class="modal-backdrop fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-box bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-slate-100">
+            <button class="modal-close-btn absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark text-base"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-red-50 text-brand-red flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-car-side"></i>
+                </div>
+                <div>
+                    <h3 class="font-heading font-black text-xl text-slate-900 leading-none">Бронирование авто онлайн</h3>
+                    <div class="text-xs text-slate-400 mt-1">Фиксация спеццены и подарков на 3 дня</div>
+                </div>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 mb-5">
+                <div id="modalCarTitle" class="font-heading font-black text-base text-slate-900">Kia Rio IV Рестайлинг</div>
+                <div class="flex items-center justify-between mt-1 text-xs">
+                    <span class="text-slate-500">Цена со скидкой:</span>
+                    <span id="modalCarPrice" class="font-heading font-black text-brand-red text-sm">1 120 000 ₽</span>
+                </div>
+            </div>
+            <form class="space-y-3.5">
+                <div>
+                    <label class="text-xs font-semibold text-slate-600 block mb-1">Ваше имя</label>
+                    <input type="text" placeholder="Иван" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-semibold text-slate-900 outline-none focus:border-brand-red transition">
+                </div>
+                <div>
+                    <label class="text-xs font-semibold text-slate-600 block mb-1">Контактный телефон</label>
+                    <input type="tel" placeholder="+7 (___) ___-__-__" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-semibold text-slate-900 outline-none focus:border-brand-red transition">
+                </div>
+                <button type="submit" class="w-full bg-brand-red hover:bg-brand-redHover text-white py-4 rounded-xl font-heading font-black text-xs uppercase tracking-wider shadow-glow-red hover:shadow-lg transition mt-2">
+                    Подтвердить бесплатную бронь
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="callbackModal" class="modal-backdrop fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-box bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative border border-slate-100">
+            <button class="modal-close-btn absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark text-base"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-red-50 text-brand-red flex items-center justify-center text-xl mx-auto mb-3">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3 class="font-heading font-black text-2xl text-slate-900">Заказать звонок</h3>
+                <p class="text-xs text-slate-500 mt-1">Специалист автосалона перезвонит вам в течение 5 минут</p>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="text-xs font-semibold text-slate-600 block mb-1">Как к вам обращаться</label>
+                    <input type="text" placeholder="Ваше имя" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-semibold text-slate-900 outline-none focus:border-brand-red transition">
+                </div>
+                <div>
+                    <label class="text-xs font-semibold text-slate-600 block mb-1">Номер телефона</label>
+                    <input type="tel" placeholder="+7 (___) ___-__-__" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-semibold text-slate-900 outline-none focus:border-brand-red transition">
+                </div>
+                <button type="submit" class="w-full bg-brand-red hover:bg-brand-redHover text-white py-3.5 rounded-xl font-heading font-black text-xs uppercase tracking-wider shadow-glow-red transition">
+                    Позвоните мне
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Buttons -->
+    <div class="fixed bottom-6 right-6 z-30 flex flex-col items-end gap-2.5">
+        <a href="https://wa.me/78005519431" target="_blank" class="w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-xl flex items-center justify-center text-xl hover:scale-110 transition" title="Написать в WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <button class="btn-open-callback w-14 h-14 rounded-full bg-brand-red hover:bg-brand-redHover text-white shadow-glow-red flex items-center justify-center text-2xl hover:scale-110 transition animate-pulse-subtle" title="Заказать звонок">
+            <i class="fa-solid fa-phone"></i>
+        </button>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    
+</body>
+</html>

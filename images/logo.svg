@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 50" fill="none">
+  <!-- Dynamic Car Silhouette / Wing Emblem -->
+  <g transform="translate(5, 5)">
+    <path d="M5 28C10 18 20 12 35 10C37 7 40 4 45 4H62L70 14H85C92 14 98 19 99 26L102 32H0L5 28Z" fill="#0B273F" opacity="0.12"/>
+    <path d="M12 28L24 13C26 10 29 8 33 8H62L71 19H86C90 19 94 22 95 26L97 30H10L12 28Z" fill="url(#brandGradient)"/>
+    <!-- Wheels -->
+    <circle cx="28" cy="30" r="7" fill="#0B273F"/>
+    <circle cx="28" cy="30" r="3.5" fill="#FFCC47"/>
+    <circle cx="78" cy="30" r="7" fill="#0B273F"/>
+    <circle cx="78" cy="30" r="3.5" fill="#FFCC47"/>
+    <!-- Speed line accent -->
+    <path d="M0 32H102" stroke="#FFCC47" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M-4 36H88" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Typography -->
+  <text x="116" y="27" font-family="'Montserrat', 'Arial Black', sans-serif" font-weight="900" font-size="24" fill="#0B273F" letter-spacing="1">
+    ABC<tspan fill="#EF4444">.</tspan><tspan fill="#FFCC47">AUTO</tspan>
+  </text>
+  <text x="117" y="39" font-family="'Inter', sans-serif" font-weight="700" font-size="8.5" fill="#64748B" letter-spacing="3">
+    ОФИЦИАЛЬНЫЙ ДИЛЕР
+  </text>
+
+  <defs>
+    <linearGradient id="brandGradient" x1="12" y1="8" x2="97" y2="30" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B273F"/>
+      <stop offset="0.6" stop-color="#1E3A8A"/>
+      <stop offset="1" stop-color="#EF4444"/>
+    </linearGradient>
+  </defs>
+</svg>

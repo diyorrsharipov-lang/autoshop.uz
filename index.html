@@ -1,0 +1,2057 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Auto — Официальный мультибрендовый автосалон в Москве | Продажа авто со скидкой</title>
+    <meta name="description" content="Купить новый автомобиль или авто с пробегом в автосалоне ABC Auto. Выгодные автокредиты от 1.9%, Trade-In с выгодой до 300 000 руб., рассрочка 0%. Более 500 авто с ПТС в наличии.">
+
+    <!-- Google Fonts: Inter & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (Play CDN with custom extended configuration) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#CA0100',
+                            redHover: '#A30000',
+                            redLight: '#FEE2E2',
+                            dark: '#0F172A',
+                            slate: '#1E293B',
+                            amber: '#F59E0B',
+                            green: '#16A34A',
+                            border: '#E2E8F0',
+                            bg: '#F8FAFC'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'card': '0 4px 20px -2px rgba(15, 23, 42, 0.06)',
+                        'card-hover': '0 20px 30px -10px rgba(15, 23, 42, 0.12)',
+                        'glow-red': '0 4px 20px rgba(202, 1, 0, 0.35)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-brand-bg text-slate-800 antialiased selection:bg-brand-red selection:text-white">
+
+    
+    <!-- ======================================================================
+         TOP BAR: City, Working Hours, Address, Quick Contact
+         ====================================================================== -->
+    <div class="bg-slate-900 text-slate-300 text-xs border-b border-slate-800 py-2.5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-2">
+            <div class="flex flex-wrap items-center gap-4 sm:gap-6 justify-center md:justify-start">
+                <button id="citySelector" class="flex items-center gap-1.5 hover:text-white transition">
+                    <i class="fa-solid fa-location-dot text-brand-red"></i>
+                    <span class="font-medium text-white border-b border-dashed border-slate-400">Москва</span>
+                    <i class="fa-solid fa-chevron-down text-[10px] text-slate-400"></i>
+                </button>
+                <div class="hidden sm:flex items-center gap-2 text-slate-400">
+                    <i class="fa-regular fa-clock text-slate-400"></i>
+                    <span>Ежедневно с 08:00 до 21:00</span>
+                </div>
+                <div class="hidden lg:flex items-center gap-2 text-slate-400">
+                    <i class="fa-solid fa-map-pin text-slate-400"></i>
+                    <span>38-й км МКАД, 6Бс1</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4 sm:gap-6">
+                <div class="flex items-center gap-3">
+                    <a href="https://wa.me/78005519431" target="_blank" class="text-emerald-400 hover:text-emerald-300 transition flex items-center gap-1">
+                        <i class="fa-brands fa-whatsapp text-sm"></i>
+                        <span class="hidden md:inline">WhatsApp</span>
+                    </a>
+                    <a href="https://t.me/abcauto" target="_blank" class="text-sky-400 hover:text-sky-300 transition flex items-center gap-1">
+                        <i class="fa-brands fa-telegram text-sm"></i>
+                        <span class="hidden md:inline">Telegram</span>
+                    </a>
+                </div>
+                <div class="h-3 w-px bg-slate-700 hidden sm:block"></div>
+                <div class="flex items-center gap-3">
+                    <a href="tel:+78005519431" class="font-bold text-white text-sm hover:text-brand-red transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone text-brand-red text-xs"></i>
+                        +7 (800) 551-94-31
+                    </a>
+                    <button class="btn-open-callback text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 px-3 py-1 rounded-md border border-slate-700 transition">
+                        Обратный звонок
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+         MAIN HEADER: Logo, Navigation, Search, Favorites, Dropdowns
+         ====================================================================== -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-red to-red-500 flex items-center justify-center text-white shadow-md shadow-red-500/20 group-hover:scale-105 transition">
+                        <i class="fa-solid fa-car-side text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1.5 font-heading font-black text-2xl tracking-tight text-slate-900 leading-none">
+                            ABC <span class="text-brand-red">AUTO</span>
+                            <span class="text-xs bg-red-100 text-brand-red font-bold px-1.5 py-0.5 rounded uppercase">+</span>
+                        </div>
+                        <div class="text-[11px] text-slate-500 tracking-wider uppercase font-semibold mt-0.5">Мультибрендовый салон</div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links with Dropdowns -->
+                <nav class="hidden xl:flex items-center gap-6 text-[14px] font-medium text-slate-700">
+                    <a href="car-selection.html" class="hover:text-brand-red transition ">Подбор авто</a>
+                    
+                    <!-- Dropdown: Каталог авто -->
+                    <div class="relative group">
+                        <a href="catalog.html" class="flex items-center gap-1 hover:text-brand-red transition py-6 ">
+                            <span>Каталог авто</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition"></i>
+                        </a>
+                        <div class="absolute top-full left-0 w-64 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="catalog.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Все новые автомобили</a>
+                            <a href="brand.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Модельный ряд KIA</a>
+                            <a href="model.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Kia Rio IV Рестайлинг</a>
+                            <a href="equipment.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Сравнение комплектаций</a>
+                            <a href="model-credit.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Модель в кредит со скидкой</a>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown: Авто с пробегом -->
+                    <div class="relative group">
+                        <a href="used-cars.html" class="flex items-center gap-1 hover:text-brand-red transition py-6 ">
+                            <span>С пробегом</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition"></i>
+                        </a>
+                        <div class="absolute top-full left-0 w-60 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="used-cars.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Каталог авто с пробегом</a>
+                            <a href="used-car-detail.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Карточка авто с диагностикой</a>
+                            <a href="car-selection-used.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Мастер подбора с пробегом</a>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown: Кредит и рассрочка -->
+                    <div class="relative group">
+                        <a href="credit.html" class="flex items-center gap-1 hover:text-brand-red transition py-6 ">
+                            <span>Кредит и рассрочка</span>
+                            <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-1.5 py-0.5 rounded">1.9%</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition"></i>
+                        </a>
+                        <div class="absolute top-full left-0 w-64 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="credit.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Кредитный калькулятор</a>
+                            <a href="express-credit.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Экспресс-кредит за 15 мин</a>
+                            <a href="installment.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Рассрочка 0% без переплат</a>
+                            <a href="family-car.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Семейный автомобиль (-10%)</a>
+                            <a href="first-car.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Первый автомобиль (-10%)</a>
+                            <a href="medical-worker.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Работникам медицины</a>
+                            <a href="recycling.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Программа Утилизация</a>
+                            <a href="trade-in.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Обмен по Trade-In</a>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown: Спецпредложения & Услуги -->
+                    <div class="relative group">
+                        <a href="selections.html" class="flex items-center gap-1 hover:text-brand-red transition py-6 ">
+                            <span>Спецпредложения</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition"></i>
+                        </a>
+                        <div class="absolute top-full left-0 w-64 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="selections.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Все наши подборки</a>
+                            <a href="selection-detail.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Семейные автомобили</a>
+                            <a href="taxi.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Такси в кредит под ключ</a>
+                            <a href="taxi-car.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Автомобиль для такси</a>
+                            <a href="insurance.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Страхование КАСКО / ОСАГО</a>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown: О компании -->
+                    <div class="relative group">
+                        <a href="about.html" class="flex items-center gap-1 hover:text-brand-red transition py-6 ">
+                            <span>О салоне</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition"></i>
+                        </a>
+                        <div class="absolute top-full right-0 w-56 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="about.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">О компании ABC Auto</a>
+                            <a href="service.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Сервисный техцентр</a>
+                            <a href="reviews.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Отзывы покупателей</a>
+                            <a href="review-detail.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Открытый отзыв клиента</a>
+                            <a href="blog.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Блог и новости</a>
+                            <a href="article.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Полезная статья</a>
+                            <a href="contacts.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Контакты и адрес</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="flex items-center gap-3">
+                    <a href="compare.html" class="relative p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:text-brand-red hover:border-red-200 hover:bg-red-50 transition" title="Сравнение авто">
+                        <i class="fa-solid fa-code-compare text-base"></i>
+                        <span id="compareCount" class="absolute -top-1.5 -right-1.5 bg-slate-900 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">10</span>
+                    </a>
+
+                    <a href="favorites.html" class="relative p-2.5 rounded-xl border border-slate-200 text-slate-600 hover:text-brand-red hover:border-red-200 hover:bg-red-50 transition" title="Избранные авто">
+                        <i class="fa-regular fa-heart text-base"></i>
+                        <span id="favCount" class="absolute -top-1.5 -right-1.5 bg-brand-red text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">12</span>
+                    </a>
+
+                    <button class="btn-open-callback hidden md:flex items-center gap-2 bg-brand-red hover:bg-brand-redHover text-white px-5 py-2.5 rounded-xl font-semibold text-sm shadow-glow-red hover:shadow-lg transition">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <span>Забронировать авто</span>
+                    </button>
+
+                    <button id="mobileMenuBtn" class="xl:hidden p-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 transition" aria-label="Открыть меню">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenuBackdrop" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+    <div id="mobileMenuDrawer" class="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white z-50 shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+        <div>
+            <div class="flex items-center justify-between pb-5 border-b border-slate-200">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-brand-red text-white flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    <span class="font-heading font-black text-xl text-slate-900">ABC AUTO</span>
+                </a>
+                <button id="mobileMenuClose" class="w-9 h-9 rounded-lg bg-slate-100 text-slate-600 flex items-center justify-center hover:bg-slate-200 transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <nav class="mt-6 flex flex-col space-y-1.5 text-sm font-semibold text-slate-800">
+                <a href="index.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Главная</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="car-selection.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Подбор авто</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="catalog.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Каталог новых авто</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="brand.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Модельный ряд KIA</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="model.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Модель Kia Rio</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="used-cars.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Авто с пробегом</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="credit.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Кредит и рассрочка</span> <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">1.9%</span>
+                </a>
+                <a href="trade-in.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Обмен Trade-In</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="taxi.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Такси в кредит</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="selections.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Наши подборки</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="reviews.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Отзывы клиентов</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="about.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>О компании</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="service.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Техцентр</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="blog.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Блог</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+                <a href="contacts.html" class="p-2.5 rounded-lg hover:bg-slate-100 hover:text-brand-red transition flex items-center justify-between">
+                    <span>Контакты</span> <i class="fa-solid fa-chevron-right text-xs text-slate-400"></i>
+                </a>
+            </nav>
+        </div>
+
+        <div class="pt-6 border-t border-slate-200 mt-6">
+            <a href="tel:+78005519431" class="font-heading font-black text-xl text-slate-900 block mb-1 hover:text-brand-red transition">
+                +7 (800) 551-94-31
+            </a>
+            <div class="text-xs text-slate-500 mb-4">Ежедневно 08:00 - 21:00 (Бесплатно по РФ)</div>
+            <button class="btn-open-callback w-full bg-brand-red text-white py-3 rounded-xl font-bold text-sm shadow-md hover:bg-brand-redHover transition">
+                Заказать обратный звонок
+            </button>
+        </div>
+    </div>
+    
+    <!-- ======================================================================
+         HERO SECTION: Interactive Promo Slider (Figma: Грандиозная распродажа)
+         ====================================================================== -->
+    <section class="relative bg-slate-900 text-white overflow-hidden py-12 lg:py-20" id="heroCarousel">
+        <!-- Background subtle lighting effects -->
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-brand-red/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+            <!-- Slide 1: Grand Sale -->
+            <div class="carousel-slide active">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 bg-red-500/20 border border-red-500/40 text-red-400 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider animate-pulse-subtle">
+                            <i class="fa-solid fa-fire text-brand-red"></i>
+                            <span>Осталось всего 10 автомобилей со скидкой!</span>
+                        </div>
+
+                        <h1 class="font-heading font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1]">
+                            Грандиозная распродажа <br class="hidden sm:inline">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-orange-400 to-amber-300">тестового парка!</span>
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-300 max-w-xl font-normal leading-relaxed">
+                            Узнайте свою специальную цену сегодня: скидки до 300 000 ₽, автокредит от 1.9%, а также комплект новой зимней резины и КАСКО в подарок при бронировании до конца недели!
+                        </p>
+
+                        <!-- Highlights grid -->
+                        <div class="grid grid-cols-3 gap-3 sm:gap-4 max-w-lg pt-2">
+                            <div class="bg-slate-800/80 border border-slate-700/80 p-3 sm:p-4 rounded-xl text-center">
+                                <div class="font-heading font-black text-xl sm:text-2xl text-brand-red">от 1.9%</div>
+                                <div class="text-[11px] sm:text-xs text-slate-400 mt-1">Автокредит без взноса</div>
+                            </div>
+                            <div class="bg-slate-800/80 border border-slate-700/80 p-3 sm:p-4 rounded-xl text-center">
+                                <div class="font-heading font-black text-xl sm:text-2xl text-amber-400">300 000 ₽</div>
+                                <div class="text-[11px] sm:text-xs text-slate-400 mt-1">Выгода по Trade-in</div>
+                            </div>
+                            <div class="bg-slate-800/80 border border-slate-700/80 p-3 sm:p-4 rounded-xl text-center">
+                                <div class="font-heading font-black text-xl sm:text-2xl text-emerald-400">98%</div>
+                                <div class="text-[11px] sm:text-xs text-slate-400 mt-1">Одобрение банков</div>
+                            </div>
+                        </div>
+
+                        <!-- Action buttons -->
+                        <div class="flex flex-wrap items-center gap-4 pt-4">
+                            <button class="btn-open-callback bg-brand-red hover:bg-brand-redHover text-white px-8 py-4 rounded-xl font-heading font-bold text-base shadow-glow-red hover:shadow-xl transition flex items-center gap-2 group">
+                                <span>Узнать свою цену</span>
+                                <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition"></i>
+                            </button>
+                            <a href="car-selection.html" class="bg-slate-800 hover:bg-slate-700 text-white px-6 py-4 rounded-xl font-heading font-semibold text-sm border border-slate-700 hover:border-slate-600 transition flex items-center gap-2">
+                                <i class="fa-solid fa-sliders text-slate-400"></i>
+                                <span>Быстрый подбор</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide Image Visual -->
+                    <div class="lg:col-span-5 relative flex justify-center">
+                        <div class="relative w-full max-w-lg">
+                            <img src="images/kia_rio.webp" alt="Kia Rio" class="w-full h-auto object-contain drop-shadow-2xl transform hover:scale-105 transition duration-500">
+                            <!-- Floating Badge -->
+                            <div class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md text-slate-900 p-3.5 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-red-100 text-brand-red flex items-center justify-center font-bold">
+                                    <i class="fa-solid fa-tags"></i>
+                                </div>
+                                <div>
+                                    <div class="text-[11px] uppercase tracking-wider font-bold text-slate-500">Экономия сегодня</div>
+                                    <div class="font-heading font-black text-base text-brand-red">до 25% на авто</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Trade-In Promotion -->
+            <div class="carousel-slide">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 bg-amber-500/20 border border-amber-500/40 text-amber-400 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
+                            <i class="fa-solid fa-arrows-rotate"></i>
+                            <span>Специальная программа обмена автомобилей</span>
+                        </div>
+
+                        <h2 class="font-heading font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1]">
+                            Обменяйте старый авто <br class="hidden sm:inline">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">с выгодой 300 000 ₽!</span>
+                        </h2>
+
+                        <p class="text-base sm:text-lg text-slate-300 max-w-xl font-normal leading-relaxed">
+                            Оценим ваш авто выше рыночной стоимости за 15 минут. Используйте старый автомобиль в качестве 100% первоначального взноса за новый!
+                        </p>
+
+                        <div class="flex flex-wrap items-center gap-4 pt-4">
+                            <button class="btn-open-callback bg-amber-500 hover:bg-amber-600 text-slate-950 px-8 py-4 rounded-xl font-heading font-black text-base shadow-lg transition">
+                                Оценить авто онлайн
+                            </button>
+                            <a href="trade-in.html" class="bg-slate-800 hover:bg-slate-700 text-white px-6 py-4 rounded-xl font-heading font-semibold text-sm border border-slate-700 transition">
+                                Подробнее о Trade-In
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 relative flex justify-center">
+                        <img src="images/geely_atlas_pro.webp" alt="Geely Atlas Pro" class="w-full h-auto object-contain drop-shadow-2xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Credit from 1.9% -->
+            <div class="carousel-slide">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
+                            <i class="fa-solid fa-percent"></i>
+                            <span>Государственная программа автокредитования</span>
+                        </div>
+
+                        <h2 class="font-heading font-black text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1.1]">
+                            Автокредит от 1.9% <br class="hidden sm:inline">
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">без первоначального взноса</span>
+                        </h2>
+
+                        <p class="text-base sm:text-lg text-slate-300 max-w-xl font-normal leading-relaxed">
+                            Одобрение по 2 документам (паспорт и права) за 15 минут. 24 ведущих банка-партнера с гарантией юридической чистоты сделки.
+                        </p>
+
+                        <div class="flex flex-wrap items-center gap-4 pt-4">
+                            <a href="credit.html" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-heading font-bold text-base shadow-lg transition">
+                                Рассчитать ежемесячный платеж
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 relative flex justify-center">
+                        <img src="images/chery_tiggo_7_pro.webp" alt="Chery Tiggo 7 Pro" class="w-full h-auto object-contain drop-shadow-2xl">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <div class="flex items-center justify-between pt-10">
+                <!-- Dots Indicator -->
+                <div class="flex items-center gap-2.5">
+                    <button class="carousel-dot h-2.5 rounded-full transition-all bg-white w-8" aria-label="Слайд 1"></button>
+                    <button class="carousel-dot h-2.5 rounded-full transition-all bg-white/50 w-2.5" aria-label="Слайд 2"></button>
+                    <button class="carousel-dot h-2.5 rounded-full transition-all bg-white/50 w-2.5" aria-label="Слайд 3"></button>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <div class="flex items-center gap-2">
+                    <button id="heroPrevBtn" class="w-10 h-10 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-700 text-slate-300 flex items-center justify-center transition">
+                        <i class="fa-solid fa-chevron-left text-sm"></i>
+                    </button>
+                    <button id="heroNextBtn" class="w-10 h-10 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-700 text-slate-300 flex items-center justify-center transition">
+                        <i class="fa-solid fa-chevron-right text-sm"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         QUICK CAR FILTER WIDGET (Figma: Быстрый подбор авто)
+         ====================================================================== -->
+    <section id="quickFilter" class="relative -mt-6 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-card border border-slate-200">
+            <!-- Header of widget -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-100">
+                <div>
+                    <h2 class="font-heading font-black text-2xl sm:text-3xl text-slate-900">Быстрый подбор автомобиля</h2>
+                    <p class="text-sm text-slate-500 mt-1">Выберите желаемые параметры и найдите идеальный автомобиль за пару кликов</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="text-xs font-semibold uppercase text-slate-400">Состояние:</span>
+                    <div class="inline-flex bg-slate-100 p-1 rounded-xl text-xs font-bold text-slate-700">
+                        <button class="px-3 py-1.5 rounded-lg bg-white shadow-sm text-slate-900">Все авто</button>
+                        <button class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition">Новые</button>
+                        <button class="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition">С пробегом</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Popular Brand Selectors Bar -->
+            <div class="py-6 border-b border-slate-100">
+                <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Популярные бренды в наличии:</div>
+                <div class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-none">
+                    <button class="shrink-0 flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 hover:border-brand-red hover:bg-red-50 text-slate-700 text-xs font-semibold transition">
+                        <img src="images/brand_kia.webp" alt="Kia" class="h-4 w-auto object-contain">
+                        <span>KIA</span>
+                    </button>
+                    <button class="shrink-0 flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 hover:border-brand-red hover:bg-red-50 text-slate-700 text-xs font-semibold transition">
+                        <img src="images/brand_hyundai.webp" alt="Hyundai" class="h-4 w-auto object-contain">
+                        <span>Hyundai</span>
+                    </button>
+                    <button class="shrink-0 flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 hover:border-brand-red hover:bg-red-50 text-slate-700 text-xs font-semibold transition">
+                        <img src="images/brand_chery.webp" alt="Chery" class="h-4 w-auto object-contain">
+                        <span>Chery</span>
+                    </button>
+                    <button class="shrink-0 flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 hover:border-brand-red hover:bg-red-50 text-slate-700 text-xs font-semibold transition">
+                        <img src="images/brand_geely.webp" alt="Geely" class="h-4 w-auto object-contain">
+                        <span>Geely</span>
+                    </button>
+                    <button class="shrink-0 flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 hover:border-brand-red hover:bg-red-50 text-slate-700 text-xs font-semibold transition">
+                        <img src="images/brand_haval.webp" alt="Haval" class="h-4 w-auto object-contain">
+                        <span>Haval</span>
+                    </button>
+                    <button class="shrink-0 flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 hover:border-brand-red hover:bg-red-50 text-slate-700 text-xs font-semibold transition">
+                        <img src="images/brand_changan.webp" alt="Changan" class="h-4 w-auto object-contain">
+                        <span>Changan</span>
+                    </button>
+                    <button class="shrink-0 flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 hover:border-brand-red hover:bg-red-50 text-slate-700 text-xs font-semibold transition">
+                        <img src="images/brand_jac.webp" alt="JAC" class="h-4 w-auto object-contain">
+                        <span>JAC</span>
+                    </button>
+                    <button class="shrink-0 flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-200 hover:border-brand-red hover:bg-red-50 text-slate-700 text-xs font-semibold transition">
+                        <img src="images/brand_toyota.webp" alt="Toyota" class="h-4 w-auto object-contain">
+                        <span>Toyota</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Body Types Grid -->
+            <div class="py-6 border-b border-slate-100">
+                <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Тип кузова:</div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+                    <button class="body-type-btn bg-red-50 border-2 border-brand-red text-brand-red p-3.5 rounded-2xl flex flex-col items-center justify-center gap-2 transition hover:scale-105" data-body="all">
+                        <i class="fa-solid fa-shapes text-xl"></i>
+                        <span class="text-xs font-bold">Все кузовы</span>
+                    </button>
+                    <button class="body-type-btn bg-slate-50 border-2 border-slate-200 text-slate-700 p-3.5 rounded-2xl flex flex-col items-center justify-center gap-2 transition hover:scale-105 hover:border-slate-300" data-body="sedan">
+                        <i class="fa-solid fa-car text-xl"></i>
+                        <span class="text-xs font-bold">Седан</span>
+                    </button>
+                    <button class="body-type-btn bg-slate-50 border-2 border-slate-200 text-slate-700 p-3.5 rounded-2xl flex flex-col items-center justify-center gap-2 transition hover:scale-105 hover:border-slate-300" data-body="suv">
+                        <i class="fa-solid fa-truck-monster text-xl"></i>
+                        <span class="text-xs font-bold">Внедорожник</span>
+                    </button>
+                    <button class="body-type-btn bg-slate-50 border-2 border-slate-200 text-slate-700 p-3.5 rounded-2xl flex flex-col items-center justify-center gap-2 transition hover:scale-105 hover:border-slate-300" data-body="hatchback">
+                        <i class="fa-solid fa-car-side text-xl"></i>
+                        <span class="text-xs font-bold">Хэтчбек</span>
+                    </button>
+                    <button class="body-type-btn bg-slate-50 border-2 border-slate-200 text-slate-700 p-3.5 rounded-2xl flex flex-col items-center justify-center gap-2 transition hover:scale-105 hover:border-slate-300" data-body="wagon">
+                        <i class="fa-solid fa-van-shuttle text-xl"></i>
+                        <span class="text-xs font-bold">Универсал</span>
+                    </button>
+                    <button class="body-type-btn bg-slate-50 border-2 border-slate-200 text-slate-700 p-3.5 rounded-2xl flex flex-col items-center justify-center gap-2 transition hover:scale-105 hover:border-slate-300" data-body="coupe">
+                        <i class="fa-solid fa-bolt text-xl"></i>
+                        <span class="text-xs font-bold">Купе / Лифтбек</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sliders and Dropdown selectors -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 pt-6 items-end">
+                <!-- Price Range Slider -->
+                <div class="md:col-span-5 space-y-3">
+                    <div class="flex items-center justify-between text-xs font-bold text-slate-700">
+                        <span>Цена до:</span>
+                        <span id="quickPriceVal" class="text-brand-red font-black text-sm">2.5 млн ₽</span>
+                    </div>
+                    <input type="range" id="quickPriceRange" min="500000" max="5000000" step="100000" value="2500000">
+                    <div class="flex justify-between text-[11px] text-slate-400 font-medium">
+                        <span>от 500 тыс. ₽</span>
+                        <span>до 5 млн. ₽</span>
+                    </div>
+                </div>
+
+                <!-- Brand Select -->
+                <div class="md:col-span-2 space-y-2">
+                    <label class="text-xs font-bold text-slate-600 block">Марка</label>
+                    <select id="quickBrandSelect" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-xs font-semibold text-slate-800 outline-none focus:border-brand-red transition">
+                        <option value="all">Все марки</option>
+                        <option value="kia">KIA</option>
+                        <option value="hyundai">Hyundai</option>
+                        <option value="chery">Chery</option>
+                        <option value="geely">Geely</option>
+                        <option value="haval">Haval</option>
+                        <option value="faw">FAW</option>
+                        <option value="jac">JAC</option>
+                    </select>
+                </div>
+
+                <!-- Gearbox Select -->
+                <div class="md:col-span-2 space-y-2">
+                    <label class="text-xs font-bold text-slate-600 block">Коробка передач</label>
+                    <select id="quickGearboxSelect" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-3 text-xs font-semibold text-slate-800 outline-none focus:border-brand-red transition">
+                        <option value="all">Любая КПП</option>
+                        <option value="at">Автомат</option>
+                        <option value="mt">Механика</option>
+                        <option value="robot">Робот</option>
+                        <option value="cvt">Вариатор</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="md:col-span-3">
+                    <a href="catalog.html" id="quickFilterCount" class="w-full bg-brand-red hover:bg-brand-redHover text-white py-3.5 px-4 rounded-xl font-heading font-black text-sm flex items-center justify-center gap-2 shadow-glow-red hover:shadow-lg transition">
+                        <span>Показать 73 авто</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         CARS IN STOCK WITH PTS (Figma: Автомобили в наличии с ПТС)
+         ====================================================================== -->
+    <section id="catalog" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header & Filter Tabs -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10">
+            <div>
+                <div class="text-xs font-bold tracking-widest text-brand-red uppercase mb-1.5 flex items-center gap-2">
+                    <i class="fa-solid fa-certificate"></i>
+                    <span>Оригинал ПТС в наличии на каждый авто</span>
+                </div>
+                <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900">
+                    Автомобили в наличии с ПТС
+                </h2>
+            </div>
+
+            <!-- Catalog Filter Tabs -->
+            <div class="flex flex-wrap items-center gap-2">
+                <button class="catalog-tab-btn bg-brand-red text-white shadow-md px-4 py-2.5 rounded-xl text-xs font-bold transition" data-filter="all">Все авто (73)</button>
+                <button class="catalog-tab-btn bg-white text-slate-700 hover:bg-slate-100 px-4 py-2.5 rounded-xl text-xs font-bold transition" data-filter="suv">Кроссоверы (38)</button>
+                <button class="catalog-tab-btn bg-white text-slate-700 hover:bg-slate-100 px-4 py-2.5 rounded-xl text-xs font-bold transition" data-filter="sedan">Седаны (22)</button>
+                <button class="catalog-tab-btn bg-white text-slate-700 hover:bg-slate-100 px-4 py-2.5 rounded-xl text-xs font-bold transition" data-filter="cheap">До 1.5 млн ₽ (16)</button>
+                <button class="catalog-tab-btn bg-white text-slate-700 hover:bg-slate-100 px-4 py-2.5 rounded-xl text-xs font-bold transition" data-filter="hit">Хиты продаж</button>
+            </div>
+        </div>
+
+        <!-- Car Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+            <!-- Card 1: Kia Rio -->
+            <div class="catalog-car-item car-card bg-white rounded-3xl p-5 shadow-card hover:shadow-card-hover border border-slate-200 transition-all duration-300 flex flex-col justify-between" data-category="all sedan hit cheap">
+                <div>
+                    <!-- Top badges & Actions -->
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-red-50 text-brand-red text-[10px] font-black uppercase px-2.5 py-1 rounded-md">
+                            -25% Скидка
+                        </span>
+                        <div class="flex items-center gap-1.5">
+                            <button class="btn-compare w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-400 hover:text-brand-red flex items-center justify-center transition" title="В сравнение">
+                                <i class="fa-solid fa-code-compare text-xs"></i>
+                            </button>
+                            <button class="btn-fav w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-400 hover:text-brand-red flex items-center justify-center transition" title="В избранное">
+                                <i class="fa-regular fa-heart text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Car Image -->
+                    <div class="relative h-44 flex items-center justify-center overflow-hidden mb-4">
+                        <img src="images/kia_rio.webp" alt="Kia Rio" class="car-image max-h-40 w-auto object-contain">
+                    </div>
+
+                    <!-- Car Brand & Name -->
+                    <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Kia • 2024</div>
+                    <h3 class="font-heading font-black text-lg text-slate-900 leading-snug hover:text-brand-red transition">
+                        Kia Rio IV Рестайлинг
+                    </h3>
+                    <div class="text-xs text-slate-500 mb-4">1.6 AT (123 л.с.) • Luxe</div>
+
+                    <!-- Specs Chips -->
+                    <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-600 font-medium mb-4 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        <div><i class="fa-solid fa-gas-pump text-slate-400 mr-1"></i> Бензин, 1.6 л</div>
+                        <div><i class="fa-solid fa-gear text-slate-400 mr-1"></i> Автомат (6 ст.)</div>
+                        <div><i class="fa-solid fa-road text-slate-400 mr-1"></i> Передний привод</div>
+                        <div><i class="fa-regular fa-calendar text-slate-400 mr-1"></i> В наличии 3 шт.</div>
+                    </div>
+
+                    <!-- Gift Tag -->
+                    <div class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md mb-4 flex items-center gap-1.5">
+                        <i class="fa-solid fa-gift text-emerald-600"></i>
+                        <span>КАСКО + Зимняя резина в подарок</span>
+                    </div>
+                </div>
+
+                <!-- Price Block & CTAs -->
+                <div class="pt-3 border-t border-slate-100">
+                    <div class="flex items-baseline justify-between mb-1">
+                        <div class="font-heading font-black text-xl text-slate-900">от 1 120 000 ₽</div>
+                        <div class="text-xs line-through text-slate-400 font-medium">1 490 000 ₽</div>
+                    </div>
+                    <div class="text-xs text-brand-red font-bold mb-4">
+                        В кредит от <span class="font-black text-sm">11 400 ₽/мес.</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="btn-book-car bg-brand-red hover:bg-brand-redHover text-white py-2.5 rounded-xl font-heading font-bold text-xs shadow-md transition" data-car-name="Kia Rio IV Рестайлинг" data-car-price="1 120 000 ₽">
+                            Купить в кредит
+                        </button>
+                        <button class="btn-book-car bg-slate-100 hover:bg-slate-200 text-slate-800 py-2.5 rounded-xl font-heading font-semibold text-xs transition" data-car-name="Kia Rio IV Рестайлинг" data-car-price="1 120 000 ₽">
+                            Резерв онлайн
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Chery Tiggo 7 Pro -->
+            <div class="catalog-car-item car-card bg-white rounded-3xl p-5 shadow-card hover:shadow-card-hover border border-slate-200 transition-all duration-300 flex flex-col justify-between" data-category="all suv hit">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-amber-100 text-amber-800 text-[10px] font-black uppercase px-2.5 py-1 rounded-md">
+                            Хит продаж
+                        </span>
+                        <div class="flex items-center gap-1.5">
+                            <button class="btn-compare w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-400 hover:text-brand-red flex items-center justify-center transition" title="В сравнение">
+                                <i class="fa-solid fa-code-compare text-xs"></i>
+                            </button>
+                            <button class="btn-fav w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-400 hover:text-brand-red flex items-center justify-center transition" title="В избранное">
+                                <i class="fa-regular fa-heart text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relative h-44 flex items-center justify-center overflow-hidden mb-4">
+                        <img src="images/chery_tiggo_7_pro.webp" alt="Chery Tiggo 7 Pro" class="car-image max-h-40 w-auto object-contain">
+                    </div>
+
+                    <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Chery • 2024</div>
+                    <h3 class="font-heading font-black text-lg text-slate-900 leading-snug hover:text-brand-red transition">
+                        Chery Tiggo 7 Pro Max
+                    </h3>
+                    <div class="text-xs text-slate-500 mb-4">1.5 CVT (147 л.с.) • Prestige</div>
+
+                    <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-600 font-medium mb-4 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        <div><i class="fa-solid fa-gas-pump text-slate-400 mr-1"></i> Бензин Турбо</div>
+                        <div><i class="fa-solid fa-gear text-slate-400 mr-1"></i> Вариатор CVT9</div>
+                        <div><i class="fa-solid fa-road text-slate-400 mr-1"></i> Полный привод 4WD</div>
+                        <div><i class="fa-regular fa-calendar text-slate-400 mr-1"></i> В наличии 5 шт.</div>
+                    </div>
+
+                    <div class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md mb-4 flex items-center gap-1.5">
+                        <i class="fa-solid fa-shield-halved text-emerald-600"></i>
+                        <span>Гарантия 5 лет или 150 000 км</span>
+                    </div>
+                </div>
+
+                <div class="pt-3 border-t border-slate-100">
+                    <div class="flex items-baseline justify-between mb-1">
+                        <div class="font-heading font-black text-xl text-slate-900">от 1 890 000 ₽</div>
+                        <div class="text-xs line-through text-slate-400 font-medium">2 340 000 ₽</div>
+                    </div>
+                    <div class="text-xs text-brand-red font-bold mb-4">
+                        В кредит от <span class="font-black text-sm">17 800 ₽/мес.</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="btn-book-car bg-brand-red hover:bg-brand-redHover text-white py-2.5 rounded-xl font-heading font-bold text-xs shadow-md transition" data-car-name="Chery Tiggo 7 Pro Max" data-car-price="1 890 000 ₽">
+                            Купить в кредит
+                        </button>
+                        <button class="btn-book-car bg-slate-100 hover:bg-slate-200 text-slate-800 py-2.5 rounded-xl font-heading font-semibold text-xs transition" data-car-name="Chery Tiggo 7 Pro Max" data-car-price="1 890 000 ₽">
+                            Резерв онлайн
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Geely Coolray -->
+            <div class="catalog-car-item car-card bg-white rounded-3xl p-5 shadow-card hover:shadow-card-hover border border-slate-200 transition-all duration-300 flex flex-col justify-between" data-category="all suv hit">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-red-50 text-brand-red text-[10px] font-black uppercase px-2.5 py-1 rounded-md">
+                            -20% Выгода
+                        </span>
+                        <div class="flex items-center gap-1.5">
+                            <button class="btn-compare w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-400 hover:text-brand-red flex items-center justify-center transition" title="В сравнение">
+                                <i class="fa-solid fa-code-compare text-xs"></i>
+                            </button>
+                            <button class="btn-fav w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-400 hover:text-brand-red flex items-center justify-center transition" title="В избранное">
+                                <i class="fa-regular fa-heart text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relative h-44 flex items-center justify-center overflow-hidden mb-4">
+                        <img src="images/geely_coolray.webp" alt="Geely Coolray" class="car-image max-h-40 w-auto object-contain">
+                    </div>
+
+                    <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Geely • 2024</div>
+                    <h3 class="font-heading font-black text-lg text-slate-900 leading-snug hover:text-brand-red transition">
+                        Geely Coolray Flagship
+                    </h3>
+                    <div class="text-xs text-slate-500 mb-4">1.5 DCT (150 л.с.) • Sport</div>
+
+                    <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-600 font-medium mb-4 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        <div><i class="fa-solid fa-gas-pump text-slate-400 mr-1"></i> Бензин Турбо</div>
+                        <div><i class="fa-solid fa-gear text-slate-400 mr-1"></i> Робот 7-DCT</div>
+                        <div><i class="fa-solid fa-gauge-high text-slate-400 mr-1"></i> 0-100 за 8.1 с</div>
+                        <div><i class="fa-regular fa-calendar text-slate-400 mr-1"></i> В наличии 4 шт.</div>
+                    </div>
+
+                    <div class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md mb-4 flex items-center gap-1.5">
+                        <i class="fa-solid fa-gift text-emerald-600"></i>
+                        <span>Сигнализация с автозапуском в подарок</span>
+                    </div>
+                </div>
+
+                <div class="pt-3 border-t border-slate-100">
+                    <div class="flex items-baseline justify-between mb-1">
+                        <div class="font-heading font-black text-xl text-slate-900">от 1 650 000 ₽</div>
+                        <div class="text-xs line-through text-slate-400 font-medium">2 110 000 ₽</div>
+                    </div>
+                    <div class="text-xs text-brand-red font-bold mb-4">
+                        В кредит от <span class="font-black text-sm">15 200 ₽/мес.</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="btn-book-car bg-brand-red hover:bg-brand-redHover text-white py-2.5 rounded-xl font-heading font-bold text-xs shadow-md transition" data-car-name="Geely Coolray Flagship" data-car-price="1 650 000 ₽">
+                            Купить в кредит
+                        </button>
+                        <button class="btn-book-car bg-slate-100 hover:bg-slate-200 text-slate-800 py-2.5 rounded-xl font-heading font-semibold text-xs transition" data-car-name="Geely Coolray Flagship" data-car-price="1 650 000 ₽">
+                            Резерв онлайн
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Haval Jolion -->
+            <div class="catalog-car-item car-card bg-white rounded-3xl p-5 shadow-card hover:shadow-card-hover border border-slate-200 transition-all duration-300 flex flex-col justify-between" data-category="all suv cheap hit">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-emerald-100 text-emerald-800 text-[10px] font-black uppercase px-2.5 py-1 rounded-md">
+                            В наличии с ПТС
+                        </span>
+                        <div class="flex items-center gap-1.5">
+                            <button class="btn-compare w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-400 hover:text-brand-red flex items-center justify-center transition" title="В сравнение">
+                                <i class="fa-solid fa-code-compare text-xs"></i>
+                            </button>
+                            <button class="btn-fav w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-400 hover:text-brand-red flex items-center justify-center transition" title="В избранное">
+                                <i class="fa-regular fa-heart text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relative h-44 flex items-center justify-center overflow-hidden mb-4">
+                        <img src="images/haval_jolion.webp" alt="Haval Jolion" class="car-image max-h-40 w-auto object-contain">
+                    </div>
+
+                    <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Haval • 2024</div>
+                    <h3 class="font-heading font-black text-lg text-slate-900 leading-snug hover:text-brand-red transition">
+                        Haval Jolion Premium
+                    </h3>
+                    <div class="text-xs text-slate-500 mb-4">1.5 DCT (150 л.с.) • 4WD</div>
+
+                    <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-600 font-medium mb-4 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        <div><i class="fa-solid fa-gas-pump text-slate-400 mr-1"></i> Бензин Турбо</div>
+                        <div><i class="fa-solid fa-gear text-slate-400 mr-1"></i> Робот 7-DCT</div>
+                        <div><i class="fa-solid fa-road text-slate-400 mr-1"></i> Полный привод</div>
+                        <div><i class="fa-regular fa-calendar text-slate-400 mr-1"></i> В наличии 6 шт.</div>
+                    </div>
+
+                    <div class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md mb-4 flex items-center gap-1.5">
+                        <i class="fa-solid fa-gas-pump text-emerald-600"></i>
+                        <span>Полный бак бензина при покупке</span>
+                    </div>
+                </div>
+
+                <div class="pt-3 border-t border-slate-100">
+                    <div class="flex items-baseline justify-between mb-1">
+                        <div class="font-heading font-black text-xl text-slate-900">от 1 490 000 ₽</div>
+                        <div class="text-xs line-through text-slate-400 font-medium">1 980 000 ₽</div>
+                    </div>
+                    <div class="text-xs text-brand-red font-bold mb-4">
+                        В кредит от <span class="font-black text-sm">13 900 ₽/мес.</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="btn-book-car bg-brand-red hover:bg-brand-redHover text-white py-2.5 rounded-xl font-heading font-bold text-xs shadow-md transition" data-car-name="Haval Jolion Premium" data-car-price="1 490 000 ₽">
+                            Купить в кредит
+                        </button>
+                        <button class="btn-book-car bg-slate-100 hover:bg-slate-200 text-slate-800 py-2.5 rounded-xl font-heading font-semibold text-xs transition" data-car-name="Haval Jolion Premium" data-car-price="1 490 000 ₽">
+                            Резерв онлайн
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: FAW Bestune T77 -->
+            <div class="catalog-car-item car-card bg-white rounded-3xl p-5 shadow-card hover:shadow-card-hover border border-slate-200 transition-all duration-300 flex flex-col justify-between" data-category="all suv cheap">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-red-50 text-brand-red text-[10px] font-black uppercase px-2.5 py-1 rounded-md">
+                            -22% Выгода
+                        </span>
+                        <div class="flex items-center gap-1.5">
+                            <button class="btn-compare w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-400 hover:text-brand-red flex items-center justify-center transition" title="В сравнение">
+                                <i class="fa-solid fa-code-compare text-xs"></i>
+                            </button>
+                            <button class="btn-fav w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-400 hover:text-brand-red flex items-center justify-center transition" title="В избранное">
+                                <i class="fa-regular fa-heart text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relative h-44 flex items-center justify-center overflow-hidden mb-4">
+                        <img src="images/faw_bestune_t77.webp" alt="FAW Bestune T77" class="car-image max-h-40 w-auto object-contain">
+                    </div>
+
+                    <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">FAW • 2024</div>
+                    <h3 class="font-heading font-black text-lg text-slate-900 leading-snug hover:text-brand-red transition">
+                        FAW Bestune T77 Luxury
+                    </h3>
+                    <div class="text-xs text-slate-500 mb-4">1.5T DCT (160 л.с.)</div>
+
+                    <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-600 font-medium mb-4 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        <div><i class="fa-solid fa-gas-pump text-slate-400 mr-1"></i> Бензин Турбо</div>
+                        <div><i class="fa-solid fa-gear text-slate-400 mr-1"></i> Робот 7-DCT</div>
+                        <div><i class="fa-solid fa-road text-slate-400 mr-1"></i> Передний привод</div>
+                        <div><i class="fa-regular fa-calendar text-slate-400 mr-1"></i> В наличии 2 шт.</div>
+                    </div>
+
+                    <div class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md mb-4 flex items-center gap-1.5">
+                        <i class="fa-solid fa-gift text-emerald-600"></i>
+                        <span>КАСКО в подарок</span>
+                    </div>
+                </div>
+
+                <div class="pt-3 border-t border-slate-100">
+                    <div class="flex items-baseline justify-between mb-1">
+                        <div class="font-heading font-black text-xl text-slate-900">от 1 380 000 ₽</div>
+                        <div class="text-xs line-through text-slate-400 font-medium">1 790 000 ₽</div>
+                    </div>
+                    <div class="text-xs text-brand-red font-bold mb-4">
+                        В кредит от <span class="font-black text-sm">12 800 ₽/мес.</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="btn-book-car bg-brand-red hover:bg-brand-redHover text-white py-2.5 rounded-xl font-heading font-bold text-xs shadow-md transition" data-car-name="FAW Bestune T77 Luxury" data-car-price="1 380 000 ₽">
+                            Купить в кредит
+                        </button>
+                        <button class="btn-book-car bg-slate-100 hover:bg-slate-200 text-slate-800 py-2.5 rounded-xl font-heading font-semibold text-xs transition" data-car-name="FAW Bestune T77 Luxury" data-car-price="1 380 000 ₽">
+                            Резерв онлайн
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: Geely Atlas Pro -->
+            <div class="catalog-car-item car-card bg-white rounded-3xl p-5 shadow-card hover:shadow-card-hover border border-slate-200 transition-all duration-300 flex flex-col justify-between" data-category="all suv">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-blue-100 text-blue-800 text-[10px] font-black uppercase px-2.5 py-1 rounded-md">
+                            Полный привод
+                        </span>
+                        <div class="flex items-center gap-1.5">
+                            <button class="btn-compare w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-400 hover:text-brand-red flex items-center justify-center transition" title="В сравнение">
+                                <i class="fa-solid fa-code-compare text-xs"></i>
+                            </button>
+                            <button class="btn-fav w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-400 hover:text-brand-red flex items-center justify-center transition" title="В избранное">
+                                <i class="fa-regular fa-heart text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relative h-44 flex items-center justify-center overflow-hidden mb-4">
+                        <img src="images/geely_atlas_pro.webp" alt="Geely Atlas Pro" class="car-image max-h-40 w-auto object-contain">
+                    </div>
+
+                    <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Geely • 2024</div>
+                    <h3 class="font-heading font-black text-lg text-slate-900 leading-snug hover:text-brand-red transition">
+                        Geely Atlas Pro 4WD
+                    </h3>
+                    <div class="text-xs text-slate-500 mb-4">1.5T 4WD (177 л.с.) • Flagship</div>
+
+                    <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-600 font-medium mb-4 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        <div><i class="fa-solid fa-gas-pump text-slate-400 mr-1"></i> Мягкий гибрид</div>
+                        <div><i class="fa-solid fa-gear text-slate-400 mr-1"></i> Робот 7-DCT</div>
+                        <div><i class="fa-solid fa-road text-slate-400 mr-1"></i> Полный привод 4x4</div>
+                        <div><i class="fa-regular fa-calendar text-slate-400 mr-1"></i> В наличии 3 шт.</div>
+                    </div>
+
+                    <div class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md mb-4 flex items-center gap-1.5">
+                        <i class="fa-solid fa-shield-halved text-emerald-600"></i>
+                        <span>Гарантия 5 лет от официального дилера</span>
+                    </div>
+                </div>
+
+                <div class="pt-3 border-t border-slate-100">
+                    <div class="flex items-baseline justify-between mb-1">
+                        <div class="font-heading font-black text-xl text-slate-900">от 1 950 000 ₽</div>
+                        <div class="text-xs line-through text-slate-400 font-medium">2 550 000 ₽</div>
+                    </div>
+                    <div class="text-xs text-brand-red font-bold mb-4">
+                        В кредит от <span class="font-black text-sm">18 500 ₽/мес.</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="btn-book-car bg-brand-red hover:bg-brand-redHover text-white py-2.5 rounded-xl font-heading font-bold text-xs shadow-md transition" data-car-name="Geely Atlas Pro 4WD" data-car-price="1 950 000 ₽">
+                            Купить в кредит
+                        </button>
+                        <button class="btn-book-car bg-slate-100 hover:bg-slate-200 text-slate-800 py-2.5 rounded-xl font-heading font-semibold text-xs transition" data-car-name="Geely Atlas Pro 4WD" data-car-price="1 950 000 ₽">
+                            Резерв онлайн
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7: JAC J7 -->
+            <div class="catalog-car-item car-card bg-white rounded-3xl p-5 shadow-card hover:shadow-card-hover border border-slate-200 transition-all duration-300 flex flex-col justify-between" data-category="all sedan cheap">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-purple-100 text-purple-800 text-[10px] font-black uppercase px-2.5 py-1 rounded-md">
+                            Лифтбек
+                        </span>
+                        <div class="flex items-center gap-1.5">
+                            <button class="btn-compare w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-400 hover:text-brand-red flex items-center justify-center transition" title="В сравнение">
+                                <i class="fa-solid fa-code-compare text-xs"></i>
+                            </button>
+                            <button class="btn-fav w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-400 hover:text-brand-red flex items-center justify-center transition" title="В избранное">
+                                <i class="fa-regular fa-heart text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relative h-44 flex items-center justify-center overflow-hidden mb-4">
+                        <img src="images/jac_j7.webp" alt="JAC J7" class="car-image max-h-40 w-auto object-contain">
+                    </div>
+
+                    <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">JAC • 2024</div>
+                    <h3 class="font-heading font-black text-lg text-slate-900 leading-snug hover:text-brand-red transition">
+                        JAC J7 Liftback
+                    </h3>
+                    <div class="text-xs text-slate-500 mb-4">1.5T CVT (136 л.с.) • Comfort</div>
+
+                    <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-600 font-medium mb-4 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        <div><i class="fa-solid fa-gas-pump text-slate-400 mr-1"></i> Бензин Турбо</div>
+                        <div><i class="fa-solid fa-gear text-slate-400 mr-1"></i> Вариатор CVT</div>
+                        <div><i class="fa-solid fa-suitcase text-slate-400 mr-1"></i> Багажник 540 л</div>
+                        <div><i class="fa-regular fa-calendar text-slate-400 mr-1"></i> В наличии 4 шт.</div>
+                    </div>
+
+                    <div class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md mb-4 flex items-center gap-1.5">
+                        <i class="fa-solid fa-gift text-emerald-600"></i>
+                        <span>Коврики + Набор автомобилиста</span>
+                    </div>
+                </div>
+
+                <div class="pt-3 border-t border-slate-100">
+                    <div class="flex items-baseline justify-between mb-1">
+                        <div class="font-heading font-black text-xl text-slate-900">от 1 290 000 ₽</div>
+                        <div class="text-xs line-through text-slate-400 font-medium">1 670 000 ₽</div>
+                    </div>
+                    <div class="text-xs text-brand-red font-bold mb-4">
+                        В кредит от <span class="font-black text-sm">11 900 ₽/мес.</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="btn-book-car bg-brand-red hover:bg-brand-redHover text-white py-2.5 rounded-xl font-heading font-bold text-xs shadow-md transition" data-car-name="JAC J7 Liftback" data-car-price="1 290 000 ₽">
+                            Купить в кредит
+                        </button>
+                        <button class="btn-book-car bg-slate-100 hover:bg-slate-200 text-slate-800 py-2.5 rounded-xl font-heading font-semibold text-xs transition" data-car-name="JAC J7 Liftback" data-car-price="1 290 000 ₽">
+                            Резерв онлайн
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8: Renault Arkana -->
+            <div class="catalog-car-item car-card bg-white rounded-3xl p-5 shadow-card hover:shadow-card-hover border border-slate-200 transition-all duration-300 flex flex-col justify-between" data-category="all suv hit">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="bg-amber-100 text-amber-800 text-[10px] font-black uppercase px-2.5 py-1 rounded-md">
+                            Купе-кроссовер
+                        </span>
+                        <div class="flex items-center gap-1.5">
+                            <button class="btn-compare w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-400 hover:text-brand-red flex items-center justify-center transition" title="В сравнение">
+                                <i class="fa-solid fa-code-compare text-xs"></i>
+                            </button>
+                            <button class="btn-fav w-8 h-8 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-400 hover:text-brand-red flex items-center justify-center transition" title="В избранное">
+                                <i class="fa-regular fa-heart text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relative h-44 flex items-center justify-center overflow-hidden mb-4">
+                        <img src="images/renault_arkana.webp" alt="Renault Arkana" class="car-image max-h-40 w-auto object-contain">
+                    </div>
+
+                    <div class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Renault • 2023</div>
+                    <h3 class="font-heading font-black text-lg text-slate-900 leading-snug hover:text-brand-red transition">
+                        Renault Arkana Prime
+                    </h3>
+                    <div class="text-xs text-slate-500 mb-4">1.3 TCe (150 л.с.) • 4WD</div>
+
+                    <div class="grid grid-cols-2 gap-2 text-[11px] text-slate-600 font-medium mb-4 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
+                        <div><i class="fa-solid fa-gas-pump text-slate-400 mr-1"></i> Бензин Турбо</div>
+                        <div><i class="fa-solid fa-gear text-slate-400 mr-1"></i> Вариатор X-Tronic</div>
+                        <div><i class="fa-solid fa-road text-slate-400 mr-1"></i> Полный привод</div>
+                        <div><i class="fa-regular fa-calendar text-slate-400 mr-1"></i> В наличии 1 шт.</div>
+                    </div>
+
+                    <div class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-1 rounded-md mb-4 flex items-center gap-1.5">
+                        <i class="fa-solid fa-shield-halved text-emerald-600"></i>
+                        <span>100% юридическая чистота</span>
+                    </div>
+                </div>
+
+                <div class="pt-3 border-t border-slate-100">
+                    <div class="flex items-baseline justify-between mb-1">
+                        <div class="font-heading font-black text-xl text-slate-900">от 1 540 000 ₽</div>
+                        <div class="text-xs line-through text-slate-400 font-medium">1 990 000 ₽</div>
+                    </div>
+                    <div class="text-xs text-brand-red font-bold mb-4">
+                        В кредит от <span class="font-black text-sm">14 300 ₽/мес.</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2">
+                        <button class="btn-book-car bg-brand-red hover:bg-brand-redHover text-white py-2.5 rounded-xl font-heading font-bold text-xs shadow-md transition" data-car-name="Renault Arkana Prime" data-car-price="1 540 000 ₽">
+                            Купить в кредит
+                        </button>
+                        <button class="btn-book-car bg-slate-100 hover:bg-slate-200 text-slate-800 py-2.5 rounded-xl font-heading font-semibold text-xs transition" data-car-name="Renault Arkana Prime" data-car-price="1 540 000 ₽">
+                            Резерв онлайн
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Load More Cars Button -->
+        <div class="text-center mt-12">
+            <button id="loadMoreCarsBtn" class="bg-white hover:bg-slate-50 text-slate-800 border-2 border-slate-200 hover:border-slate-300 px-8 py-4 rounded-2xl font-heading font-black text-sm shadow-sm transition inline-flex items-center gap-2">
+                <i class="fa-solid fa-rotate-right text-brand-red"></i>
+                <span>Показать еще 12 автомобилей</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         OUR SELECTIONS (Figma: Наши подборки)
+         ====================================================================== -->
+    <section class="py-16 bg-slate-100/60 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-10 text-center max-w-2xl mx-auto">
+                <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900">Наши подборки авто</h2>
+                <p class="text-sm text-slate-500 mt-2">Специально сгруппированные категории под ваши жизненные задачи и бюджет</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Selection 1 -->
+                <a href="catalog.html" class="group bg-white p-6 rounded-3xl shadow-card hover:shadow-card-hover border border-slate-200 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-red-50 text-brand-red flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-people-roof"></i>
+                    </div>
+                    <h3 class="font-heading font-black text-lg text-slate-900 group-hover:text-brand-red transition">Семейные автомобили</h3>
+                    <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Просторные 7-местные кроссоверы и вместительные универсалы с максимальной безопасностью</p>
+                    <div class="mt-4 text-xs font-bold text-brand-red flex items-center gap-1">
+                        <span>24 авто от 1.2 млн ₽</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </div>
+                </a>
+
+                <!-- Selection 2 -->
+                <a href="catalog.html" class="group bg-white p-6 rounded-3xl shadow-card hover:shadow-card-hover border border-slate-200 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-taxi"></i>
+                    </div>
+                    <h3 class="font-heading font-black text-lg text-slate-900 group-hover:text-brand-red transition">Авто для такси</h3>
+                    <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Автомобили с оклейкой и разрешением на работу, готовые к заработку в таксопарках с 1 дня</p>
+                    <div class="mt-4 text-xs font-bold text-amber-600 flex items-center gap-1">
+                        <span>18 авто от 890 тыс. ₽</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </div>
+                </a>
+
+                <!-- Selection 3 -->
+                <a href="catalog.html" class="group bg-white p-6 rounded-3xl shadow-card hover:shadow-card-hover border border-slate-200 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <h3 class="font-heading font-black text-lg text-slate-900 group-hover:text-brand-red transition">Первый автомобиль</h3>
+                    <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Экономичные и компактные седаны с господдержкой -10% для начинающих водителей</p>
+                    <div class="mt-4 text-xs font-bold text-emerald-600 flex items-center gap-1">
+                        <span>15 авто от 750 тыс. ₽</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </div>
+                </a>
+
+                <!-- Selection 4 -->
+                <a href="catalog.html" class="group bg-white p-6 rounded-3xl shadow-card hover:shadow-card-hover border border-slate-200 transition">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-mountain"></i>
+                    </div>
+                    <h3 class="font-heading font-black text-lg text-slate-900 group-hover:text-brand-red transition">Внедорожники 4x4</h3>
+                    <p class="text-xs text-slate-500 mt-1.5 leading-relaxed">Мощные полноприводные авто с высоким клиренсом для загородных поездок и бездорожья</p>
+                    <div class="mt-4 text-xs font-bold text-purple-600 flex items-center gap-1">
+                        <span>16 авто от 1.4 млн ₽</span> <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         PRICE BEAT BANNER (Figma: Перебьем предложения от конкурентов!)
+         ====================================================================== -->
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative bg-gradient-to-r from-slate-900 via-slate-800 to-red-950 rounded-3xl p-8 sm:p-12 lg:p-16 text-white shadow-2xl overflow-hidden">
+            <!-- Background accent -->
+            <div class="absolute right-0 top-0 w-96 h-96 bg-brand-red/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="inline-flex items-center gap-2 bg-red-500/20 text-red-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-red-500/30">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Гарантия лучшей цены в Москве</span>
+                    </div>
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl lg:text-5xl leading-tight">
+                        Перебьем предложения <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-amber-300">от любых конкурентов!</span>
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-300 max-w-lg leading-relaxed">
+                        Покажите расчет или коммерческое предложение любого автосалона, и мы сделаем цену еще ниже — дополнительная скидка от 10% до 25% на стоимость автомобиля!
+                    </p>
+                </div>
+
+                <!-- Fast Consultation Form -->
+                <div class="lg:col-span-5 bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/10">
+                    <h3 class="font-heading font-black text-xl text-white mb-2">Получить лучшую цену</h3>
+                    <p class="text-xs text-slate-300 mb-5">Оставьте контактные данные, зафиксируем персональную скидку за вами на 3 дня</p>
+
+                    <form class="space-y-3.5">
+                        <input type="text" placeholder="Ваше имя" required class="w-full bg-white/90 focus:bg-white text-slate-900 placeholder:text-slate-500 rounded-xl px-4 py-3 text-xs font-semibold outline-none focus:ring-2 focus:ring-brand-red transition">
+                        <input type="tel" placeholder="+7 (___) ___-__-__" required class="w-full bg-white/90 focus:bg-white text-slate-900 placeholder:text-slate-500 rounded-xl px-4 py-3 text-xs font-semibold outline-none focus:ring-2 focus:ring-brand-red transition">
+                        <button type="submit" class="w-full bg-brand-red hover:bg-brand-redHover text-white py-3.5 rounded-xl font-heading font-black text-xs uppercase tracking-wider shadow-glow-red hover:shadow-lg transition">
+                            Получить максимальную скидку
+                        </button>
+                        <div class="text-[10px] text-slate-400 text-center leading-tight">
+                            Нажимая кнопку, вы даете согласие на обработку персональных данных
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         SPECIAL OFFERS (Figma: Спецпредложения)
+         ====================================================================== -->
+    <section id="specialOffers" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+            <div>
+                <div class="text-xs font-bold tracking-widest text-brand-red uppercase mb-1 flex items-center gap-2">
+                    <i class="fa-solid fa-gift"></i>
+                    <span>Выгодные госпрограммы и бонусы</span>
+                </div>
+                <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900">Спецпредложения автосалона</h2>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-500 max-w-md">
+                Действующие акции можно суммировать для получения максимальной выгоды до 450 000 ₽ при покупке авто
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Promo 1 -->
+            <div class="bg-white rounded-3xl p-6 shadow-card hover:shadow-card-hover border border-slate-200 transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-red-100 text-brand-red flex items-center justify-center text-xl mb-4 font-bold">
+                        10%
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Госпрограмма</span>
+                    <h3 class="font-heading font-black text-lg text-slate-900 mt-1">Первый автомобиль</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                        Скидка 10% от стоимости авто для граждан РФ, приобретающих свой первый автомобиль в кредит.
+                    </p>
+                </div>
+                <div class="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-xs font-black text-brand-red">Выгода до 180 000 ₽</span>
+                    <button class="btn-open-callback text-xs font-bold text-slate-700 hover:text-brand-red transition">Подробнее &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Promo 2 -->
+            <div class="bg-white rounded-3xl p-6 shadow-card hover:shadow-card-hover border border-slate-200 transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-children"></i>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Госпрограмма</span>
+                    <h3 class="font-heading font-black text-lg text-slate-900 mt-1">Семейный автомобиль</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                        Для семей с одним и более несовершеннолетними детьми. Государственная субсидия на покупку.
+                    </p>
+                </div>
+                <div class="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-xs font-black text-amber-600">Субсидия 10-20%</span>
+                    <button class="btn-open-callback text-xs font-bold text-slate-700 hover:text-brand-red transition">Подробнее &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Promo 3 -->
+            <div class="bg-white rounded-3xl p-6 shadow-card hover:shadow-card-hover border border-slate-200 transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl mb-4 font-bold">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Льгота</span>
+                    <h3 class="font-heading font-black text-lg text-slate-900 mt-1">Работникам медицины</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                        Специальные условия кредитования и дополнительная скидка для сотрудников системы здравоохранения.
+                    </p>
+                </div>
+                <div class="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-xs font-black text-emerald-600">Ставка от 1.9%</span>
+                    <button class="btn-open-callback text-xs font-bold text-slate-700 hover:text-brand-red transition">Подробнее &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Promo 4 -->
+            <div class="bg-white rounded-3xl p-6 shadow-card hover:shadow-card-hover border border-slate-200 transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl mb-4 font-bold">
+                        0%
+                    </div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Беспроцентно</span>
+                    <h3 class="font-heading font-black text-lg text-slate-900 mt-1">Честная рассрочка</h3>
+                    <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                        Рассрочка на любой автомобиль до 36 месяцев без переплат и скрытых комиссий с первоначальным взносом от 20%.
+                    </p>
+                </div>
+                <div class="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-xs font-black text-blue-600">0% на 3 года</span>
+                    <button class="btn-open-callback text-xs font-bold text-slate-700 hover:text-brand-red transition">Подробнее &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         CREDIT CALCULATOR (Figma: Заявка на автокредит)
+         ====================================================================== -->
+    <section id="creditCalc" class="py-16 sm:py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="mb-12 text-center max-w-2xl mx-auto">
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-red bg-red-500/10 px-3 py-1 rounded-full border border-red-500/20">
+                    Автокредитование онлайн
+                </span>
+                <h2 class="font-heading font-black text-3xl sm:text-4xl text-white mt-3">
+                    Кредитный калькулятор с моментальным решением
+                </h2>
+                <p class="text-sm text-slate-300 mt-2">
+                    Настройте параметры кредита и узнайте точный размер ежемесячного платежа со сниженной ставкой от 1.9%
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Sliders Controls Container -->
+                <div class="lg:col-span-7 bg-slate-800/80 backdrop-blur-md p-6 sm:p-8 lg:p-10 rounded-3xl border border-slate-700/80 space-y-8">
+                    <!-- Slider 1: Car Price -->
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">Стоимость автомобиля</label>
+                            <input type="text" id="calcPriceInput" readonly class="bg-slate-900 border border-slate-700 text-white font-heading font-black text-base px-3.5 py-1.5 rounded-xl text-right w-44 outline-none">
+                        </div>
+                        <input type="range" id="calcPriceRange" min="500000" max="5000000" step="50000" value="1800000">
+                        <div class="flex justify-between text-[11px] text-slate-400 font-medium">
+                            <span>500 000 ₽</span>
+                            <span>5 000 000 ₽</span>
+                        </div>
+                    </div>
+
+                    <!-- Slider 2: Initial Payment -->
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">Первоначальный взнос</label>
+                            <input type="text" id="calcInitialInput" readonly class="bg-slate-900 border border-slate-700 text-amber-400 font-heading font-black text-base px-3.5 py-1.5 rounded-xl text-right w-52 outline-none">
+                        </div>
+                        <input type="range" id="calcInitialRange" min="0" max="70" step="5" value="20">
+                        <div class="flex justify-between text-[11px] text-slate-400 font-medium">
+                            <span>0% (без взноса)</span>
+                            <span>70%</span>
+                        </div>
+                    </div>
+
+                    <!-- Slider 3: Term -->
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">Срок кредитования</label>
+                            <span id="calcTermVal" class="text-white font-heading font-black text-base">36 мес. (3 г.)</span>
+                        </div>
+                        <input type="range" id="calcTermRange" min="6" max="84" step="6" value="36">
+                        <div class="flex justify-between text-[11px] text-slate-400 font-medium">
+                            <span>6 месяцев</span>
+                            <span>7 лет (84 мес.)</span>
+                        </div>
+                    </div>
+
+                    <!-- Advantages badge list -->
+                    <div class="pt-4 border-t border-slate-700/80 grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-300 font-medium">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Без справок 2-НДФЛ</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Решение за 15 мин</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Досрочное без штрафов</div>
+                    </div>
+                </div>
+
+                <!-- Calculation Summary & Application Form -->
+                <div class="lg:col-span-5 bg-white text-slate-900 p-6 sm:p-8 lg:p-10 rounded-3xl shadow-2xl space-y-6">
+                    <div class="bg-red-50 p-5 rounded-2xl border border-red-100 text-center">
+                        <div class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">Ежемесячный платеж</div>
+                        <div id="calcResultPayment" class="font-heading font-black text-3xl sm:text-4xl text-brand-red">
+                            16 400 ₽/мес.
+                        </div>
+                        <div class="flex items-center justify-center gap-4 mt-3 text-xs font-semibold text-slate-600">
+                            <div>Сумма: <span id="calcResultLoanSum" class="font-bold text-slate-900">1 440 000 ₽</span></div>
+                            <div class="h-3 w-px bg-slate-300"></div>
+                            <div>Ставка: <span id="calcResultRate" class="font-bold text-emerald-600">1.9%</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Application Form -->
+                    <form class="space-y-4">
+                        <h4 class="font-heading font-black text-base text-slate-900">Заявка на одобрение кредита</h4>
+                        <div>
+                            <label class="text-xs font-semibold text-slate-600 block mb-1">ФИО полностью</label>
+                            <input type="text" placeholder="Иванов Иван Иванович" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-semibold text-slate-900 outline-none focus:border-brand-red transition">
+                        </div>
+                        <div>
+                            <label class="text-xs font-semibold text-slate-600 block mb-1">Номер телефона</label>
+                            <input type="tel" placeholder="+7 (999) 000-00-00" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-semibold text-slate-900 outline-none focus:border-brand-red transition">
+                        </div>
+                        <button type="submit" class="w-full bg-brand-red hover:bg-brand-redHover text-white py-4 rounded-xl font-heading font-black text-sm uppercase tracking-wider shadow-glow-red hover:shadow-lg transition">
+                            Получить решение банков онлайн
+                        </button>
+                        <p class="text-[10px] text-slate-400 text-center leading-tight">
+                            Нажимая кнопку, вы подтверждаете согласие на обработку данных и передачу в банки-партнеры
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         PARTNER BANKS (Figma: Банки-партнеры)
+         ====================================================================== -->
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+            <h2 class="font-heading font-black text-2xl sm:text-3xl text-slate-900">24 надежных банка-партнера</h2>
+            <p class="text-sm text-slate-500 mt-1">Официальные соглашения с ведущими финансовыми институтами России</p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 items-center">
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 text-center font-bold text-xs text-slate-700 hover:border-brand-red transition">СберБанк</div>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 text-center font-bold text-xs text-slate-700 hover:border-brand-red transition">ВТБ</div>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 text-center font-bold text-xs text-slate-700 hover:border-brand-red transition">Альфа-Банк</div>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 text-center font-bold text-xs text-slate-700 hover:border-brand-red transition">Тинькофф</div>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 text-center font-bold text-xs text-slate-700 hover:border-brand-red transition">Совкомбанк</div>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 text-center font-bold text-xs text-slate-700 hover:border-brand-red transition">Росбанк</div>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 text-center font-bold text-xs text-slate-700 hover:border-brand-red transition">Открытие</div>
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 text-center font-bold text-xs text-slate-700 hover:border-brand-red transition">Газпромбанк</div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         CUSTOMER RATINGS & TRUST (Figma: Нам доверяют)
+         ====================================================================== -->
+    <section class="py-12 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
+                <!-- Platform 1: Yandex -->
+                <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center font-heading font-black text-lg">
+                        Я
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            <span class="font-black text-slate-900 ml-1 text-sm">4.8</span>
+                        </div>
+                        <div class="text-xs font-bold text-slate-800 mt-0.5">Яндекс Карты</div>
+                        <div class="text-[11px] text-slate-400">1 420+ отзывов</div>
+                    </div>
+                </div>
+
+                <!-- Platform 2: Google Maps -->
+                <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500 text-white flex items-center justify-center font-heading font-black text-lg">
+                        G
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            <span class="font-black text-slate-900 ml-1 text-sm">4.7</span>
+                        </div>
+                        <div class="text-xs font-bold text-slate-800 mt-0.5">Google Maps</div>
+                        <div class="text-[11px] text-slate-400">890+ отзывов</div>
+                    </div>
+                </div>
+
+                <!-- Platform 3: Otzovik -->
+                <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-heading font-black text-lg">
+                        О
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="font-black text-slate-900 ml-1 text-sm">4.9</span>
+                        </div>
+                        <div class="text-xs font-bold text-slate-800 mt-0.5">Сайт Отзовик</div>
+                        <div class="text-[11px] text-slate-400">Рекомендуют 96%</div>
+                    </div>
+                </div>
+
+                <!-- Platform 4: 2GIS -->
+                <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-heading font-black text-lg">
+                        2Г
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="font-black text-slate-900 ml-1 text-sm">4.8</span>
+                        </div>
+                        <div class="text-xs font-bold text-slate-800 mt-0.5">2ГИС Справочник</div>
+                        <div class="text-[11px] text-slate-400">Проверенная компания</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         CUSTOMER REVIEWS (Figma: Отзывы)
+         ====================================================================== -->
+    <section id="reviews" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+                <span class="text-xs font-bold tracking-widest text-brand-red uppercase mb-1 flex items-center gap-2">
+                    <i class="fa-solid fa-comments"></i>
+                    <span>Честные отзывы реальных покупателей</span>
+                </span>
+                <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900">
+                    Что говорят наши клиенты
+                </h2>
+            </div>
+            <button class="btn-open-callback text-xs font-bold bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 px-5 py-3 rounded-xl transition">
+                Оставить свой отзыв
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Review 1 (Exact from Figma: Сергей Васильев) -->
+            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-card border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex text-amber-400 text-xs gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 font-medium">12 ноября 2024</span>
+                    </div>
+                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed italic mb-6">
+                        «Я нахожусь в салоне ABC Auto, всем советую, отличный коллектив! Подобрали мне новый Geely Coolray в комплектации Flagship со скидкой 240 тысяч рублей. Оформили автокредит под 1.9% за час без волокиты. В подарок дали комплект премиальной резины Nokian. Огромное спасибо менеджеру Артему!»
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                    <div class="w-10 h-10 rounded-full bg-slate-200 font-bold text-slate-700 flex items-center justify-center text-sm">
+                        СВ
+                    </div>
+                    <div>
+                        <div class="font-heading font-black text-sm text-slate-900">Сергей Васильев</div>
+                        <div class="text-[11px] text-slate-400">Купил Geely Coolray</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-card border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex text-amber-400 text-xs gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 font-medium">28 октября 2024</span>
+                    </div>
+                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed italic mb-6">
+                        «Приехали из Рязани по рекомендации друзей. Сдали свой Солярис в Trade-in по вполне адекватной цене — даже выше, чем предлагали в нашем городе. Взяли Haval Jolion с полным приводом для семьи. Машина была в наличии с оригиналом ПТС, уехали на номерах в тот же день!»
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                    <div class="w-10 h-10 rounded-full bg-slate-200 font-bold text-slate-700 flex items-center justify-center text-sm">
+                        ЕМ
+                    </div>
+                    <div>
+                        <div class="font-heading font-black text-sm text-slate-900">Елена Мельникова</div>
+                        <div class="text-[11px] text-slate-400">Купила Haval Jolion 4WD</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-card border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex text-amber-400 text-xs gap-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 font-medium">15 октября 2024</span>
+                    </div>
+                    <p class="text-slate-700 text-xs sm:text-sm leading-relaxed italic mb-6">
+                        «Покупал Chery Tiggo 7 Pro Max по программе Семейный автомобиль. Получил субсидию 10% и честную процентную ставку без навязывания ненужных страховок. КАСКО подарили на первый год. Салон современный, просторный, чай-кофе, отношение к клиентам на высоте.»
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                    <div class="w-10 h-10 rounded-full bg-slate-200 font-bold text-slate-700 flex items-center justify-center text-sm">
+                        ДД
+                    </div>
+                    <div>
+                        <div class="font-heading font-black text-sm text-slate-900">Дмитрий Данилов</div>
+                        <div class="text-[11px] text-slate-400">Купил Chery Tiggo 7 Pro</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         ABOUT COMPANY (Figma: О компании)
+         ====================================================================== -->
+    <section class="py-16 sm:py-24 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-xs font-bold tracking-widest text-brand-red uppercase">О мультибрендовом автосалоне</span>
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900 leading-tight">
+                        Более 15 лет безупречной репутации на авторынке Москвы
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Мы располагаем огромной торговой площадкой более 5000 квадратных метров, на которой постоянно представлено свыше 500 новых автомобилей и проверенных авто с пробегом. Каждый автомобиль проходит строгую юридическую проверку и диагностику по 120 пунктам технического регламента.
+                    </p>
+
+                    <!-- Key Metrics -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4">
+                        <div class="border-l-2 border-brand-red pl-4">
+                            <div class="font-heading font-black text-2xl sm:text-3xl text-slate-900">5 000+ м²</div>
+                            <div class="text-xs text-slate-500 mt-1">Площадь шоурума</div>
+                        </div>
+                        <div class="border-l-2 border-brand-red pl-4">
+                            <div class="font-heading font-black text-2xl sm:text-3xl text-slate-900">15 лет</div>
+                            <div class="text-xs text-slate-500 mt-1">Опыта на рынке</div>
+                        </div>
+                        <div class="border-l-2 border-brand-red pl-4">
+                            <div class="font-heading font-black text-2xl sm:text-3xl text-slate-900">50 000+</div>
+                            <div class="text-xs text-slate-500 mt-1">Довольных клиентов</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 space-y-2">
+                        <i class="fa-solid fa-file-shield text-2xl text-brand-red mb-2"></i>
+                        <h4 class="font-heading font-black text-base text-slate-900">100% ПТС в наличии</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Оформление и выдача автомобиля день в день со всеми документами</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 space-y-2">
+                        <i class="fa-solid fa-screwdriver-wrench text-2xl text-brand-red mb-2"></i>
+                        <h4 class="font-heading font-black text-base text-slate-900">Собственный техцентр</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Гарантийное и постгарантийное обслуживание на сертифицированном оборудовании</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 space-y-2">
+                        <i class="fa-solid fa-handshake text-2xl text-brand-red mb-2"></i>
+                        <h4 class="font-heading font-black text-base text-slate-900">Честный Trade-In</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Рыночная оценка вашего старого авто и доплата в любую сторону</p>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-100 space-y-2">
+                        <i class="fa-solid fa-plane-departure text-2xl text-brand-red mb-2"></i>
+                        <h4 class="font-heading font-black text-base text-slate-900">Оплата проезда</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Компенсируем билеты до Москвы и бесплатное такси до автосалона</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         BLOG & ARTICLES (Figma: Блог)
+         ====================================================================== -->
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between mb-10">
+            <div>
+                <span class="text-xs font-bold tracking-widest text-brand-red uppercase">Полезные материалы</span>
+                <h2 class="font-heading font-black text-3xl text-slate-900 mt-1">Автомобильный блог</h2>
+            </div>
+            <a href="#" class="hidden sm:flex items-center gap-2 text-xs font-bold text-slate-700 hover:text-brand-red transition">
+                <span>Все статьи</span> <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Article 1 -->
+            <article class="bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover border border-slate-200 transition group">
+                <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
+                    <img src="images/hero_slide_1.webp" alt="Blog" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-md">
+                        25 октября
+                    </span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-heading font-black text-base text-slate-900 group-hover:text-brand-red transition mb-2">
+                        Как выгодно купить кроссовер в кредит в 2024 году?
+                    </h3>
+                    <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                        Подробный гид по актуальным государственным программам льготного автокредитования и расчет реальной экономии.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+                        <span>Время чтения: 5 мин</span>
+                        <span class="text-brand-red font-bold">Читать &rarr;</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover border border-slate-200 transition group">
+                <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
+                    <img src="images/hero_slide_2.webp" alt="Blog" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-md">
+                        18 октября
+                    </span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-heading font-black text-base text-slate-900 group-hover:text-brand-red transition mb-2">
+                        Сравнение Geely Coolray и Chery Tiggo 7 Pro Max
+                    </h3>
+                    <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                        Тест-драйв двух самых популярных городских кроссоверов: динамика, комфорт подвески и стоимость обслуживания.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+                        <span>Время чтения: 7 мин</span>
+                        <span class="text-brand-red font-bold">Читать &rarr;</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover border border-slate-200 transition group">
+                <div class="h-48 bg-slate-900 flex items-center justify-center relative overflow-hidden">
+                    <img src="images/hero_slide_3.webp" alt="Blog" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <span class="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1 rounded-md">
+                        05 октября
+                    </span>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-heading font-black text-base text-slate-900 group-hover:text-brand-red transition mb-2">
+                        Правила обмена авто по системе Trade-In без подводных камней
+                    </h3>
+                    <p class="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                        Как подготовить автомобиль к оценке и получить максимальную выгоду до 300 000 рублей при сдаче в автосалон.
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+                        <span>Время чтения: 4 мин</span>
+                        <span class="text-brand-red font-bold">Читать &rarr;</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- ======================================================================
+         CONTACTS & MAP (Figma: Как до нас добраться)
+         ====================================================================== -->
+    <section id="contacts" class="py-16 sm:py-24 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold tracking-widest text-brand-red uppercase">Мы на карте Москвы</span>
+                    <h2 class="font-heading font-black text-3xl sm:text-4xl text-slate-900">
+                        Как до нас добраться
+                    </h2>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Приезжайте на чашку вкусного кофе и бесплатный тест-драйв любого понравившегося автомобиля!
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-red-50 text-brand-red flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-semibold uppercase">Адрес автосалона</div>
+                                <div class="text-sm font-bold text-slate-900 mt-0.5">Россия, Москва, 38-й км МКАД, 6Бс1</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-red-50 text-brand-red flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-semibold uppercase">Режим работы</div>
+                                <div class="text-sm font-bold text-slate-900 mt-0.5">Ежедневно без выходных с 08:00 до 21:00</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-red-50 text-brand-red flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 font-semibold uppercase">Телефон отдела продаж</div>
+                                <a href="tel:+78005519431" class="text-sm font-black text-brand-red hover:underline mt-0.5 block">
+                                    +7 (800) 551-94-31 (Бесплатно по всей РФ)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button class="btn-open-callback w-full sm:w-auto bg-brand-red hover:bg-brand-redHover text-white px-8 py-4 rounded-xl font-heading font-black text-xs uppercase tracking-wider shadow-glow-red transition">
+                            Заказать бесплатное такси до автосалона
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Visual Map Container -->
+                <div class="lg:col-span-7 bg-slate-900 rounded-3xl overflow-hidden shadow-2xl relative min-h-[420px] flex items-center justify-center">
+                    <iframe src="https://yandex.ru/map-widget/v1/?ll=37.525641%2C55.594732&z=15" width="100%" height="450" frameborder="0" allowfullscreen="true" class="w-full h-full min-h-[420px] border-0"></iframe>
+                    
+                    <!-- Overlay directions badge -->
+                    <div class="absolute bottom-6 left-6 right-6 sm:right-auto bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <div>
+                            <div class="font-heading font-black text-sm text-slate-900">Удобный съезд с МКАД</div>
+                            <div class="text-xs text-slate-500">Бесплатная охраняемая парковка для клиентов</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- ======================================================================
+         RICH FOOTER: SEO Matrix, Brands Directory, Program Links
+         ====================================================================== -->
+    <footer class="bg-slate-950 text-slate-400 text-xs pt-16 pb-12 border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div>
+                <div class="text-slate-300 font-heading font-black text-sm uppercase tracking-wider mb-4">
+                    Каталог популярных моделей в наличии
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 text-[11px]">
+                    <div>
+                        <div class="font-bold text-white mb-1.5"><a href="brand.html" class="hover:text-brand-red">KIA</a></div>
+                        <ul class="space-y-1 text-slate-400">
+                            <li><a href="model.html" class="hover:text-brand-red transition">Kia Rio</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Kia Sportage</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Kia Sorento</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Kia K5</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white mb-1.5">Hyundai</div>
+                        <ul class="space-y-1 text-slate-400">
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Hyundai Solaris</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Hyundai Creta</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Hyundai Tucson</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Hyundai Santa Fe</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white mb-1.5">Chery</div>
+                        <ul class="space-y-1 text-slate-400">
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Tiggo 4 Pro</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Tiggo 7 Pro Max</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Tiggo 8 Pro Max</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Arrizo 8</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white mb-1.5">Geely</div>
+                        <ul class="space-y-1 text-slate-400">
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Geely Coolray</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Geely Atlas Pro</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Geely Monjaro</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Geely Emgrand</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white mb-1.5">Haval</div>
+                        <ul class="space-y-1 text-slate-400">
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Haval Jolion</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Haval F7 / F7x</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Haval Dargo</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Haval H9</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white mb-1.5">Changan & JAC</div>
+                        <ul class="space-y-1 text-slate-400">
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Changan CS35 Plus</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">Changan CS55 Plus</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">JAC J7 Liftback</a></li>
+                            <li><a href="catalog.html" class="hover:text-brand-red transition">JAC JS6</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pt-8 border-t border-slate-900">
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <div class="w-9 h-9 rounded-xl bg-brand-red text-white flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <span class="font-heading font-black text-xl text-white">ABC AUTO +</span>
+                    </a>
+                    <p class="text-[11px] leading-relaxed text-slate-400">
+                        Официальный мультибрендовый автосалон в Москве. Продажа новых автомобилей и авто с пробегом с гарантией юридической чистоты.
+                    </p>
+                    <div class="text-[11px] text-slate-400">
+                        ОГРН: 1127746592810 • ИНН: 7724849201
+                    </div>
+                </div>
+
+                <div>
+                    <div class="font-heading font-bold text-white text-xs uppercase mb-3">Навигация</div>
+                    <ul class="space-y-2 text-[11px]">
+                        <li><a href="car-selection.html" class="hover:text-white transition">Подбор автомобиля</a></li>
+                        <li><a href="catalog.html" class="hover:text-white transition">Автомобили с ПТС в наличии</a></li>
+                        <li><a href="used-cars.html" class="hover:text-white transition">Каталог авто с пробегом</a></li>
+                        <li><a href="selections.html" class="hover:text-white transition">Действующие спецпредложения</a></li>
+                        <li><a href="credit.html" class="hover:text-white transition">Кредитный калькулятор онлайн</a></li>
+                        <li><a href="reviews.html" class="hover:text-white transition">Отзывы покупателей</a></li>
+                        <li><a href="contacts.html" class="hover:text-white transition">Контакты и адрес</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <div class="font-heading font-bold text-white text-xs uppercase mb-3">Программы</div>
+                    <ul class="space-y-2 text-[11px]">
+                        <li><a href="family-car.html" class="hover:text-white transition">Госпрограмма "Семейный автомобиль"</a></li>
+                        <li><a href="first-car.html" class="hover:text-white transition">Госпрограмма "Первый автомобиль"</a></li>
+                        <li><a href="trade-in.html" class="hover:text-white transition">Обмен по Trade-in (+300 000 ₽)</a></li>
+                        <li><a href="installment.html" class="hover:text-white transition">Рассрочка 0% без переплат</a></li>
+                        <li><a href="taxi.html" class="hover:text-white transition">Автомобили для такси в кредит</a></li>
+                        <li><a href="medical-worker.html" class="hover:text-white transition">Работникам медицины</a></li>
+                        <li><a href="recycling.html" class="hover:text-white transition">Программа утилизации</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="font-heading font-bold text-white text-xs uppercase mb-3">Контакты</div>
+                    <div class="font-heading font-black text-lg text-white">+7 (800) 551-94-31</div>
+                    <div class="text-[11px] text-slate-400">Россия, Москва, 38-й км МКАД, 6Бс1</div>
+                    <div class="text-[11px] text-slate-400">Режим работы: 08:00 - 21:00 (ежедневно)</div>
+                    <button class="btn-open-callback w-full bg-slate-800 hover:bg-slate-700 text-white py-2.5 rounded-xl font-bold text-xs border border-slate-700 transition">
+                        Заказать обратный звонок
+                    </button>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+                <div>
+                    &copy; 2024–2026 ABC Auto. Все права защищены. Информация на сайте не является публичной офертой.
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="404.html" class="hover:text-slate-400 transition">Тест 404 ошибки</a>
+                    <a href="#" class="hover:text-slate-400 transition">Политика конфиденциальности</a>
+                    <a href="#" class="hover:text-slate-400 transition">Пользовательское соглашение</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="bookingModal" class="modal-backdrop fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-box bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative border border-slate-100">
+            <button class="modal-close-btn absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark text-base"></i>
+            </button>
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-red-50 text-brand-red flex items-center justify-center font-bold">
+                    <i class="fa-solid fa-car-side"></i>
+                </div>
+                <div>
+                    <h3 class="font-heading font-black text-xl text-slate-900 leading-none">Бронирование авто онлайн</h3>
+                    <div class="text-xs text-slate-400 mt-1">Фиксация спеццены и подарков на 3 дня</div>
+                </div>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 mb-5">
+                <div id="modalCarTitle" class="font-heading font-black text-base text-slate-900">Kia Rio IV Рестайлинг</div>
+                <div class="flex items-center justify-between mt-1 text-xs">
+                    <span class="text-slate-500">Цена со скидкой:</span>
+                    <span id="modalCarPrice" class="font-heading font-black text-brand-red text-sm">1 120 000 ₽</span>
+                </div>
+            </div>
+            <form class="space-y-3.5">
+                <div>
+                    <label class="text-xs font-semibold text-slate-600 block mb-1">Ваше имя</label>
+                    <input type="text" placeholder="Иван" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-semibold text-slate-900 outline-none focus:border-brand-red transition">
+                </div>
+                <div>
+                    <label class="text-xs font-semibold text-slate-600 block mb-1">Контактный телефон</label>
+                    <input type="tel" placeholder="+7 (___) ___-__-__" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-semibold text-slate-900 outline-none focus:border-brand-red transition">
+                </div>
+                <button type="submit" class="w-full bg-brand-red hover:bg-brand-redHover text-white py-4 rounded-xl font-heading font-black text-xs uppercase tracking-wider shadow-glow-red hover:shadow-lg transition mt-2">
+                    Подтвердить бесплатную бронь
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="callbackModal" class="modal-backdrop fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-box bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative border border-slate-100">
+            <button class="modal-close-btn absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark text-base"></i>
+            </button>
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-red-50 text-brand-red flex items-center justify-center text-xl mx-auto mb-3">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <h3 class="font-heading font-black text-2xl text-slate-900">Заказать звонок</h3>
+                <p class="text-xs text-slate-500 mt-1">Специалист автосалона перезвонит вам в течение 5 минут</p>
+            </div>
+            <form class="space-y-4">
+                <div>
+                    <label class="text-xs font-semibold text-slate-600 block mb-1">Как к вам обращаться</label>
+                    <input type="text" placeholder="Ваше имя" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-semibold text-slate-900 outline-none focus:border-brand-red transition">
+                </div>
+                <div>
+                    <label class="text-xs font-semibold text-slate-600 block mb-1">Номер телефона</label>
+                    <input type="tel" placeholder="+7 (___) ___-__-__" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-semibold text-slate-900 outline-none focus:border-brand-red transition">
+                </div>
+                <button type="submit" class="w-full bg-brand-red hover:bg-brand-redHover text-white py-3.5 rounded-xl font-heading font-black text-xs uppercase tracking-wider shadow-glow-red transition">
+                    Позвоните мне
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Buttons -->
+    <div class="fixed bottom-6 right-6 z-30 flex flex-col items-end gap-2.5">
+        <a href="https://wa.me/78005519431" target="_blank" class="w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-xl flex items-center justify-center text-xl hover:scale-110 transition" title="Написать в WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <button class="btn-open-callback w-14 h-14 rounded-full bg-brand-red hover:bg-brand-redHover text-white shadow-glow-red flex items-center justify-center text-2xl hover:scale-110 transition animate-pulse-subtle" title="Заказать звонок">
+            <i class="fa-solid fa-phone"></i>
+        </button>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    
+</body>
+</html>
