@@ -102,34 +102,67 @@
             <div class="flex items-center justify-between h-20">
                 <!-- Brand Logo -->
                 <a href="index.html" class="flex items-center gap-3 group">
-                    <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-red to-red-500 flex items-center justify-center text-white shadow-md shadow-red-500/20 group-hover:scale-105 transition">
-                        <i class="fa-solid fa-car-side text-xl"></i>
-                    </div>
-                    <div>
-                        <div class="flex items-center gap-1.5 font-heading font-black text-2xl tracking-tight text-slate-900 leading-none">
-                            ABC <span class="text-brand-red">AUTO</span>
-                            <span class="text-xs bg-red-100 text-brand-red font-bold px-1.5 py-0.5 rounded uppercase">+</span>
-                        </div>
-                        <div class="text-[11px] text-slate-500 tracking-wider uppercase font-semibold mt-0.5">Мультибрендовый салон</div>
-                    </div>
+                    <img src="images/logo.svg" alt="ABC Auto" class="h-10 w-auto">
                 </a>
 
                 <!-- Desktop Navigation Links with Dropdowns -->
                 <nav class="hidden xl:flex items-center gap-6 text-[14px] font-medium text-slate-700">
                     <a href="car-selection.html" class="hover:text-brand-red transition text-brand-red font-bold">Подбор авто</a>
                     
-                    <!-- Dropdown: Каталог авто -->
+                    <!-- Mega Dropdown: Каталог авто -->
                     <div class="relative group">
-                        <a href="catalog.html" class="flex items-center gap-1 hover:text-brand-red transition py-6 ">
+                        <a href="catalog.html" class="flex items-center gap-1.5 hover:text-brand-red transition py-6 ">
                             <span>Каталог авто</span>
                             <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition"></i>
                         </a>
-                        <div class="absolute top-full left-0 w-64 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                            <a href="catalog.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Все новые автомобили</a>
-                            <a href="brand.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Модельный ряд KIA</a>
-                            <a href="model.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Kia Rio IV Рестайлинг</a>
-                            <a href="equipment.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Сравнение комплектаций</a>
-                            <a href="model-credit.html" class="block px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 hover:text-brand-red">Модель в кредит со скидкой</a>
+                        <div class="absolute top-full -left-12 w-[540px] bg-white rounded-3xl shadow-2xl border border-slate-100 p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Популярные бренды в наличии</span>
+                                <a href="catalog.html" class="text-xs font-bold text-brand-red hover:underline">Все 73 авто &rarr;</a>
+                            </div>
+                            <div class="grid grid-cols-3 gap-3 mb-4">
+                                <a href="brand.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-red-50 text-slate-800 hover:text-brand-red transition">
+                                    <img src="images/brand_kia.webp" class="w-6 h-6 object-contain" alt="Kia">
+                                    <span class="text-xs font-bold">KIA <small class="text-slate-400">(45)</small></span>
+                                </a>
+                                <a href="catalog.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-red-50 text-slate-800 hover:text-brand-red transition">
+                                    <img src="images/brand_hyundai.webp" class="w-6 h-6 object-contain" alt="Hyundai">
+                                    <span class="text-xs font-bold">Hyundai <small class="text-slate-400">(38)</small></span>
+                                </a>
+                                <a href="catalog.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-red-50 text-slate-800 hover:text-brand-red transition">
+                                    <img src="images/brand_chery.webp" class="w-6 h-6 object-contain" alt="Chery">
+                                    <span class="text-xs font-bold">Chery <small class="text-slate-400">(52)</small></span>
+                                </a>
+                                <a href="catalog.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-red-50 text-slate-800 hover:text-brand-red transition">
+                                    <img src="images/brand_geely.webp" class="w-6 h-6 object-contain" alt="Geely">
+                                    <span class="text-xs font-bold">Geely <small class="text-slate-400">(41)</small></span>
+                                </a>
+                                <a href="catalog.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-red-50 text-slate-800 hover:text-brand-red transition">
+                                    <img src="images/brand_haval.webp" class="w-6 h-6 object-contain" alt="Haval">
+                                    <span class="text-xs font-bold">Haval <small class="text-slate-400">(36)</small></span>
+                                </a>
+                                <a href="catalog.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-red-50 text-slate-800 hover:text-brand-red transition">
+                                    <img src="images/brand_changan.webp" class="w-6 h-6 object-contain" alt="Changan">
+                                    <span class="text-xs font-bold">Changan <small class="text-slate-400">(29)</small></span>
+                                </a>
+                                <a href="catalog.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-red-50 text-slate-800 hover:text-brand-red transition">
+                                    <img src="images/brand_faw.webp" class="w-6 h-6 object-contain" alt="FAW">
+                                    <span class="text-xs font-bold">FAW <small class="text-slate-400">(18)</small></span>
+                                </a>
+                                <a href="catalog.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-red-50 text-slate-800 hover:text-brand-red transition">
+                                    <img src="images/brand_jac.webp" class="w-6 h-6 object-contain" alt="JAC">
+                                    <span class="text-xs font-bold">JAC <small class="text-slate-400">(14)</small></span>
+                                </a>
+                                <a href="catalog.html" class="flex items-center gap-2.5 p-2 rounded-xl hover:bg-red-50 text-slate-800 hover:text-brand-red transition">
+                                    <img src="images/brand_toyota.webp" class="w-6 h-6 object-contain" alt="Toyota">
+                                    <span class="text-xs font-bold">Toyota <small class="text-slate-400">(17)</small></span>
+                                </a>
+                            </div>
+                            <div class="pt-3 border-t border-slate-100 grid grid-cols-3 gap-2 text-[11px] font-semibold text-slate-600">
+                                <a href="model.html" class="hover:text-brand-red"><i class="fa-solid fa-car mr-1 text-slate-400"></i> Kia Rio IV</a>
+                                <a href="equipment.html" class="hover:text-brand-red"><i class="fa-solid fa-table-list mr-1 text-slate-400"></i> Комплектации</a>
+                                <a href="model-credit.html" class="hover:text-brand-red"><i class="fa-solid fa-percent mr-1 text-slate-400"></i> Авто в кредит</a>
+                            </div>
                         </div>
                     </div>
 
